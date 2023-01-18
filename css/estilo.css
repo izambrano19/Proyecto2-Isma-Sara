@@ -1,0 +1,979 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* EMPIEZA EL HEADER*/
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.container_menu {
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+
+}
+
+.container_menu.abajo{
+    background-color: rgba(0, 0, 0, 0.856);
+
+}
+
+.container_menu a {
+    font-weight: 600;
+}
+
+.container_menu #selected:hover {
+    color: #3be611;
+    background-color: black;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#logo2 img {
+    width: 100px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.pie_pagina .logo a {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li {
+    list-style: none;
+    margin-left: 36px;
+}
+
+
+.menu ul li a {
+    font-size: 16px;
+    color: rgb(194, 194, 194);
+}
+
+.menu ul li a:hover {
+    color: #39ca15;
+}
+
+#selected {
+    background-color: rgb(194, 194, 194);;
+    padding: 10px 40px;
+    border-radius: 50px;
+    color: black;
+}
+
+
+.menu nav #logo2 {
+    display: none;
+}
+
+.menu #btn_menu {
+    display: none;
+}
+
+.container__cover {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url(../img/portada.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_parrafo{
+    color: white;
+    font-weight: bolder;
+    font-size: calc(12px + 3.5vw);
+    justify-content: left;
+    width: 100%;
+    line-height: 5.5vw;
+    font-style: italic;
+}
+
+.container_parrafo p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    .container_parrafo {
+        line-height: 7.5vh;
+    }
+
+}
+
+.cover {
+    max-width: 1500px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@keyframes move-vector {
+    0% {
+        transform: translateY(15px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(15px);
+    }
+}
+
+
+/*Haciendo la página Responsive*/
+
+@media screen and (max-width: 1700px) {
+
+    .container__cover {
+        background-position: 50%;
+    }
+
+}
+
+@media screen and (max-width: 1300px) {
+
+    .group {
+        width: 10%;
+    }
+
+    .input {
+        width: 10%;
+    }
+
+}
+
+@media screen and (max-width: 1070px) {
+
+    .menu nav {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        background-color: black;
+        width: 250px;
+        height: 100vh;
+        padding: 40px;
+        z-index: 1;
+        transition: all 300ms;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .menu ul li {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    #selected {
+        background-color: rgb(194, 194, 194);;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+
+    .container_menu #selected:hover {
+        color: white;
+        background-color: green;
+    }
+
+    .menu nav #logo2 {
+        display: block;
+        font-size: 45px;
+        color: black;
+    }
+
+  
+
+    #back_menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    .menu #btn_menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 24px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 300ms;
+    }
+
+    .menu #btn_menu:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+/*IMAGEN DE PORTADA*/
+
+
+.contenedorBox {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+}
+
+.box1 {
+    width: 30%;
+    height: 30vh;
+    background-image:
+        url(../img/noticias/biomedicina1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+
+}
+
+.box1:hover {
+    color: white;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url(../img/noticias/biomedicina1.jpg);
+}
+
+
+
+/*TERMINA HEADER*/
+
+@media (max-width: 720px) {
+    .container_menu nav > ul > li a:hover {
+        transform: scale(1.1);
+    }
+}
+
+/*CONTENIDO BODY*/
+
+/*CARRUSEL*/
+.img-3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #76c0be;
+}
+
+.img-3 .contenedor {
+    background-color: blue;
+    margin: auto;
+}
+
+.img-3 img {
+    height: 300px;
+    padding: 0 20px;
+
+}
+
+/* FIN CARRUSEL*/
+
+
+/* CONTAINER COMUN*/
+
+.containerComunes1 {
+    width: 100%;
+    background-color: #7FCBD4;
+}
+
+.containerComunes1 h2 {
+    padding-top: 50px;
+    text-align: center;
+    color: black;
+}
+
+/* IMAGEN*/
+
+.container1 img {
+    width: 30%;
+    margin: auto;
+}
+
+/*FIN IMAGEN*/
+
+.container1 {
+    display: flex;
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
+    padding: 50px 0 100px 0;
+}
+
+.containerComunes2 {
+    background-color: #fff;
+}
+
+.containerComunes2 h2 {
+    padding-top: 50px;
+    text-align: center;
+    color: black;
+}
+
+/* IMAGENES*/
+
+.container2 img {
+    width: 45%;
+    margin: auto;
+}
+
+/* FIN IMAGEN*/
+
+/* PARRAFOS */
+
+.containerp p {
+    width: 45%;
+    margin: auto;
+}
+
+/* FIN PARRAFOS*/
+
+/* CONTAINERS IMG - PARRAFOS*/
+
+/* CONTAINER IMG*/
+.container2 {
+    display: flex;
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
+    padding: 50px 0;
+
+}
+
+/*CONTAINER PARRAFO*/
+
+.containerp {
+    display: flex;
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
+    text-align: justify;
+    padding-bottom: 50px;
+
+}
+
+/*FOOTER*/
+
+.pie-pagina {
+    background-color: #057165;
+    color: black;
+    width: 100%;
+    position: absolute;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    height: 60px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    margin-bottom: 25px;
+}
+
+
+.pie-pagina .grupo-1 .box p {
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: aqua;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #0a2a14;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+/* PAGINA DRUGS */
+
+.titulo_drugs {
+    width: 100%;
+    max-width: 1650px;
+    margin: auto;
+    padding: 90px 0 0;
+    font-weight: bolder;
+}
+
+.container_botones{
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    margin: auto;
+    justify-content: end;
+}
+
+.botones{
+    display: flex;
+    width: 75px;
+    height: 30px;
+    justify-content: center;
+    margin: 0 5px;
+    font-size: 14px;
+    border: 0;
+    background: #d6e8f0;
+    color: rgb(63, 62, 62);
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px #bcbebd;
+}
+
+.botones:hover{
+    background: #b3e1f3;
+}
+
+
+
+
+.drugs a{
+    margin: auto 0;
+}
+
+.titulo_drugs h2 {
+    color: black;
+    text-align: center;
+}
+
+/* CONTAINER GRANDE*/
+
+.container_grande_0 {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    font-weight: bolder;
+}
+
+.container_grande {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    font-weight: bolder;
+}
+
+
+/* COLUMNAS BOX_FARMACOS */
+
+.resultados {
+    width: 100%;
+    max-width: 230px;
+    padding: 10px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.box_farmacos:first-child {
+    margin-right: 5%;
+}
+
+.box_farmacos {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: #8effcf;
+}
+
+/* COLUMNA IZQUIERDA */
+
+.container_izquierda {
+    width: 20%;
+    max-width: 230px;
+    margin: 10px auto;
+}
+
+.filtrar:first-child {
+    height: 40px;
+}
+
+.filtrar {
+    width: 100%;
+    padding: 10px;
+    height: 350px;
+    border: 1px solid black;
+    background-color: #8effcf;
+    text-align: center;
+}
+
+/* COLUMNA DERECHA */
+
+.container_grande_0 .container_derecha {
+    display: flex;
+}
+
+.container_derecha {
+    width: 80%;
+    max-width: 900px;
+    margin: 10px auto;
+}
+
+.drugs {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    height: 195px;
+    background-color: #8effcf;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.drugs img {
+    width: 35vh;
+    max-width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 10px;
+    border: 1px solid black;
+}
+
+.drugs p {
+    max-width: 500px;
+    padding: 20px 10px;
+    word-break: break-word;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:800px) {
+    .container_grande {
+        display: block;
+    }
+
+    .container_grande_0 {
+        display: block;
+    }
+
+    .container_izquierda {
+        display: flex;
+        width: 100%;
+        max-width: initial;
+    }
+
+    .container_derecha {
+        width: 100%;
+    }
+
+    .container_grande_0 .container_derecha {
+        justify-content: center;
+    }
+
+    .box_farmacos:first-child {
+        margin-right: initial;
+    }
+
+    .box_farmacos {
+        max-width: initial;
+        text-align: center;
+    }
+
+    .resultados {
+        max-width: initial;
+    }
+
+    .filtrar {
+        height: 40px;
+    }
+}
+
+/* VER FARMACO EN CONCRETO*/
+
+/* CONTAINER GRANDE FARMACO*/
+.container_grande_farmaco {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    font-weight: bolder;
+}
+
+.autor_fecha {
+    display: flex;
+    width: 85%;
+    max-width: 1100px;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.container_codigo {
+    width: 50%;
+    max-width: 1100px;
+    text-align: center
+}
+
+.codigo {
+    width: 50%;
+    max-width: 400px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* COLUMNA IZQUIERDA FARMACO*/
+
+.container_izquierda_farmaco {
+    width: 40%;
+    max-width: 500px;
+    margin: 10px auto;
+    justify-content: center;
+
+}
+
+.container_izquierda_farmaco img {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+}
+
+/* COLUMNA DERECHA FARMACO*/
+
+.container_derecha_farmaco {
+    width: 60%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.informacion_farmaco {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #8effcf;
+    border: 1px solid black;
+    line-height: 25px;
+
+}
+/* PAGINA PROTEINAS */
+
+.container_derecha_proteinas {
+    width: 80%;
+    max-width: 900px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 40px;
+}
+
+.proteinas{
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px;
+    height: 250px;
+    background-color: #8effcf;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.container_etc{
+    display: flex;    
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+.primera_columna_etc{
+    width: 20%;
+    margin: auto;
+    max-width: 230px;
+}
+
+.etc{
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    margin: 10px auto;
+    height: 40px;
+    background-color:#8effcf;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+@media screen and (max-width:800px) {
+    .container_etc {
+        display: block;
+        width: 100%;
+    }
+}
+
+/*ESTADÍSTICAS*/
+
+
+/*1ER GRÁFICO*/
+.board{
+    margin: 50px auto;
+    width: 100%;
+    max-width: 750px;
+    height: 450px;
+    background-color: #e2e2e2;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.titulo_grafica{
+    width: 100%;
+    height: 10%;
+}
+.titulo_grafica>h3{
+    padding: 0;
+    margin: 0px;
+    text-align: center;
+    color: #666666;
+}
+.sub_board{
+    width: 100%;
+    max-width: 750px;
+    height: 90%;
+    padding: 10px;
+    margin: auto;
+    background-color:#f4f4f4;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.sep_board{
+    width: 100%;
+    height: 10%;
+}
+.cont_board{
+    width: 100%;
+    height: 80%;
+}
+.graf_board{
+    width: 85%;
+    height: 100%;
+    float: right;
+    margin-top: 0px;
+    background-color: darkgrey;
+    border-left: 2px solid #999999;
+    border-bottom: 2px solid #999999;
+    box-sizing: border-box;
+    display: flex;
+
+
+    background: linear-gradient(rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 9.5%,  rgba(0,0,0,0.3) 10%, rgba(0,0,0,0) 10.5%, 
+    rgba(0,0,0,0) 19.5%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0) 20.5%, 
+    rgba(0,0,0,0) 29.5%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 30.5%, 
+    rgba(0,0,0,0) 39.5%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 40.5%, 
+    rgba(0,0,0,0) 49.5%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 50.5%, 
+    rgba(0,0,0,0) 59.5%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 60.5%, 
+    rgba(0,0,0,0) 69.5%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 70.5%, 
+    rgba(0,0,0,0) 79.5%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 80.5%, 
+    rgba(0,0,0,0) 89.5%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 90.5%, 
+    rgba(0,0,0,0) 100%);
+
+    
+}
+.barra{
+    width: 100%;
+    height: 100%;
+    
+    background-color: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.barra2{
+    width: 100%;
+    height: 100%;
+    margin-right: 30px;
+    background-color: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+
+
+
+.sub_barra{
+    width: 100%;
+    height: 80%;
+    background: #00799b;
+    background: -moz-linear-gradient(top, #00799b 0%, #53b1a1 100%);
+    background: -webkit-linear-gradient(top, #00799b 0%,#53b1a1 100%);
+    background: linear-gradient(to bottom, #00799b 0%,#53b1a1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00799b', endColorstr='#53b1a1',GradientType=0 );
+    
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.sub_barra2{
+    width: 100%;
+    height: 80%;
+    background: #013847;
+    background: -moz-linear-gradient(top, #013847 0%, #00799b 100%);
+    background: -webkit-linear-gradient(top, #013847 0%,#00799b 100%);
+    background: linear-gradient(to bottom, #013847 0%,#00799b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#013847', endColorstr='#00799b',GradientType=0 );
+    
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.tag_g{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: -20px;
+    z-index: 2;
+}
+.tag_leyenda{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+.tag_board{
+    height: 100%;
+    width: 15%;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    box-sizing: border-box;
+}
+.sub_tag_board{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.sub_tag_board>div{
+    width: 100%;
+    height: 10%;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.b1{ height: 5%}
+.b2{ height: 85%}
+.b3{ height: 15%}
+.b4{ height: 65%}
+.b5{ height: 20%}
+.b6{ height: 60%}
+.b7{ height: 25%}
+.b8{ height: 58%}
+.b9{ height: 40%}
+.b10{ height: 35%}
+
+/*2DO GRÁFICO*/
+
+.wrapper {
+    display: flex;  
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+   } 
+   .wrapper > * {
+    margin: auto;
+    flex: 1 50%;
+}
+
+

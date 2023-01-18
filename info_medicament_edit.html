@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="width=device-width,
+    initial-scale=1.0">
+    <link rel="stylesheet" href="css/info_medicament_edit.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>PHARMACS EDIT</title>
+    <link rel="shorcut icon" type="image/png" href="img/favicon.png">
+
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+   
+    
+</head>
+<body>
+  <header>
+    <div class="container_menu">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo-2def.png"></a>
+        </div>
+
+        <div class="menu">
+            <i class="fas fa-bars" id="btn_menu"></i>
+            <div id="back_menu"></div>
+            <nav id="nav">
+                <div id="logo2">
+                    <a href="Nais.html"><img src="img/logo-2def.png"></a>
+                </div>
+                <ul>
+                  <li><a href="index.html" id="selected">HOMEPAGE</a></li>
+                  <li><a href="statistics.html">STATISTICS</a></li>
+                  <li><a href="proteins.html">PROTEINS</a></li>
+                  <li><a href="drugs.html">PHARMACS</a></li>
+                  <li><a href="createUser.html">CREATE USER</a></li>
+                  <li><a href="login.html">LOG IN</a></li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<script src="js/script.js"></script>
+
+  <div class="container-title">EDIT DRUG</div>
+
+  <main>
+
+
+    <div class="container-img">
+      <img src="img/medicamentos/loperamide.jpg" alt="medicamento 1" class="image"/>
+      <div class="hover_img">
+        <div class="edit-img">Edit photo</div>
+      </div>
+    </div>
+
+
+
+    <div class="container-info-med">
+      <div class="container-table">
+        <table>
+          <tr>
+            <td id="column1">Name: </td>
+            <td><input type="text" id="name" placeholder="LOPERAMIDE"></td>
+          </tr>
+          <tr>
+            <td id="column1">ID:</td>
+            <td><input type="text" id="id" placeholder="NAIS841"></td>
+          </tr>
+          <tr>
+            <td id="column1">Molecular Formula:</td>
+            <td><input type="text" id="mol_height" placeholder="C29H33ClN2O2"></td>
+          </tr>
+          <tr>
+            <td id="column1">Molecular Weight</td>
+            <td><input type="text" id="mol_height" placeholder="477.05"></td>
+          </tr>
+          <tr>
+            <td id="column1">Trade Names From Alternative Forms:</td>
+            <td><textarea class="textarea" placeholder="ARRET, DIAH-LIMIT, DIAQUITTE, DIAREZE, DIARRHOEA RELIEF, DIASORB, DIOCALM, DIOCAPS, DIORALEZE, ENTROCALM, GPPE PACK, Imodium, IMODIUM A-D, IMODIUM A-D EZ CHEWS, Imodium advanced, IMODIUM CLASSIC, IMODIUM IBS RELIEF, IMODIUM INSTANT MELTS, IMODIUM INSTATNTS, IMODIUM LIQUICAPS, LODIAR, LOPERAGEN, LOPERAMIDE HYDROCHLORIDE, NORIMODE, NORMALOE."></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td id="column1">Molecule Type</td>
+            <td><input type="text" id="mol_type" placeholder="Small Molecule"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+  <br>
+  <div class="input_field">
+    <input type="submit" value="SAVE" class="btn">
+  </div>
+
+  <footer class="pie-pagina">
+
+    <div class="grupo-1">
+
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="img/logo-1def.png" alt="Logo NAIS">
+                </a>
+            </figure>
+        </div>
+
+        <div class="box">
+            <h2>INFORMACIÓN DE CONTACTO</h2>
+            <p>UBICACIÓN: C/XXX XX XXXX</p>
+            <p>TELÉFONO: XXX XX XX XX</p>
+            <p>CORREO: XXXXXXX@XXXXXX</p>
+        </div>
+
+        <div class="box">
+            <h2>NORMATIVA LEGAL</h2>
+            <p>PROTECCIÓN DE DATOS</p>
+            <p>POLÍTICA DE COOKIES</p>
+            <p>AVISO LEGAL</p>
+        </div>
+    </div>
+
+    <div class="grupo-2">
+        <small>&copy; 2022 <b>NaIs</b> - Todos los Derechos Reservados.</small>
+    </div>
+
+</footer>
+</body>
+
+</html>
