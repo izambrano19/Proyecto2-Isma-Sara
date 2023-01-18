@@ -22,7 +22,7 @@
     <style>
         .icono-cerrarsesion{
             width: 30px;
-            display: inline-block;
+            display: flex;
         }
         </style>
     <header>
@@ -70,6 +70,8 @@
                 </nav>
 
             </div>
+
+
         </div>
     </header>
 
