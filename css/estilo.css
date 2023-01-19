@@ -547,6 +547,7 @@ body {
     max-width: 1400px;
     margin: auto;
     font-weight: bolder;
+    justify-content: center;
 }
 
 .container_grande {
@@ -555,6 +556,7 @@ body {
     max-width: 1400px;
     margin: auto;
     font-weight: bolder;
+    justify-content: center;
 }
 
 
@@ -587,7 +589,8 @@ body {
 .container_izquierda {
     width: 20%;
     max-width: 230px;
-    margin: 10px auto;
+    padding: 20px;
+
 }
 
 .filtrar:first-child {
@@ -612,7 +615,7 @@ body {
 .container_derecha {
     width: 80%;
     max-width: 900px;
-    margin: 10px auto;
+    padding: 20px;
 }
 
 .drugs {

@@ -78,9 +78,11 @@
     <main>
         <div class="container__cover">
             <div class="container_parrafo">
+            <!--
             <p>AL LADO DE LA CIENCIA</p>
             <p>DE LA MANO DE GRANDES</p>
             <p>CIENTÍFICOS</p>
+                        -->
         </div>
         </div>
     </main>
