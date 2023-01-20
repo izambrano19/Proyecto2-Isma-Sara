@@ -380,12 +380,12 @@ body {
 
 .containerprimero{
     width: 100%;
-    padding: 120px 20px 40px;
+    padding: 120px 20px 80px;
 }
 
 .containersegundo{
     width: 100%;
-    padding: 120px 20px 40px;
+    padding: 120px 20px 80px;
     background-color: rgba(194, 247, 235, 0.3);
 }
 
@@ -406,6 +406,7 @@ body {
     margin: auto;
     text-align: justify;
     padding-top: 30px;
+    font-size: calc(10px + 0.5vw);
 }
 
 .containersegundo p{
@@ -413,7 +414,28 @@ body {
     margin: auto;
     text-align: justify;
     padding-top: 30px;
+    font-size: calc(10px + 0.5vw);
 
+}
+
+@media screen and (max-width:800px) {
+    .containerComunes1 {
+        display: block;
+    }
+    .containerprimero , .containersegundo{
+        padding: 40px 20px;
+    }
+
+    .containerprimero img, .containerprimero p{
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+    }
+    .containersegundo img, .containersegundo p{
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+    }
 }
 
 .container1 {
