@@ -3,179 +3,67 @@
     
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <div class="titulo_drugs">
+
+    <div>
         <h2>PROTEINS</h2>
     </div>
     <br>
-
-    <div class="container_grande_0">
-        <div class="container_izquierda">
-            <div class="resultados">
-                <p>Nº RESULTADOS</p>
-            </div>
-        </div>
-        <div class="container_derecha">
-            <a style="color:black" class="box_farmacos" href="info_proteinas_create.html">CREATE NEW</a>
-            <br>
-            <div class="box_farmacos" style="cursor:pointer">
-                <p>MY PROTEINS</p>
-            </div>
-        </div>
-    </div>
     <br>
-    <div class="container_grande">
-        <div class="container_izquierda">
-            <div class="filtrar">
-                <p>ORDENAR POR:</p>
-            </div>
-            <br>
-            <div class="filtrar">
-                <p>FILTRO DE RESULTADOS:</p>
-            </div>
+    <br>
+    <br>
+
+<!-- BARRA DE NAVEGACION -->
+
+
+<div class="containerProteinas">
+    <input type="button" value="NEW ITEM">
+    <input type="button" value="MY ITEM">
+
+
+<div class="containerColProteinas"> 
+		<div class="item"> 
+            <img class="icon_Editar" src="https://img.icons8.com/pastel-glyph/64/null/edit--v1.png"/>
+            <div class="parte_Superior">X</div>
+
+            <img src="img/proteinas/proteina-1.png">
+		</div> 
+		<div class="item"> 
+            <img src="img/proteinas/proteina-2.jpg">
+		</div> 
+        <div class="item"> 
+            <img src="img/proteinas/proteina-3.jpg">
+		</div> 
+		<div class="item"> 
+            <img src="img/proteinas/proteina-1.png">
+		</div> 
+        <div class="item"> 
+            <img src="img/proteinas/proteina-2.jpg">
+		</div> 
+		<div class="item"> 
+            <img src="img/proteinas/proteina-3.jpg">
+		</div> 
+	</div> 
+
+    <br>
+    <div class="containerColProteinas">
+        <div style="background-color: red; width: 100px; height: 50px"></div>
+        <div class="item"> 
+                <div class="parte_Superior"></div>
+                <img src="img/proteinas/proteina-1.png">
         </div>
-
-        <div class="container_derecha_proteinas">     
-             
-            <div>
-                <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                <input class="botones" type="button" value="EDITAR">
-            </a>
-            <a href="#">
-                <input class="botones" type="button" value="BORRAR">
-            </a>    
-            </div>
-            <a href="info_proteinas.html">
-                <img class="proteinas" src="img/proteinas/proteina-1.png">
-            </a>
-            </div>
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-2.jpg">
-</a>                
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-3.jpg">
-                </a>
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-1.png">
-</a>                
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-2.jpg">
-</a>                
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-3.jpg">
-</a>                
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-1.png">
-                </a>
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-2.jpg">
-                </a>
-                </div>
-
-                <div>
-                    <div style="display: flex">
-                <a href="info_proteinas_edit.html">
-                    <input class="botones" type="button" value="EDITAR">
-                </a>
-                <a href="#">
-                    <input class="botones" type="button" value="BORRAR">
-                </a>    
-                </div>
-                <a href="info_proteinas.html">
-
-                    <img class="proteinas" src="img/proteinas/proteina-3.jpg">
-</a>                
-                </div> 
-            
-        </div>
+        <div class="item"> 
+            <div class="parte_Superior"></div>
+            <img src="img/proteinas/proteina-1.png">
+		</div>
     </div>
 
-    <div class="container_etc">
-<div class="primera_columna_etc"></div>
-<div class="etc">...</div>
+
 </div>
+
 
 <?php require("footer.php")?>
