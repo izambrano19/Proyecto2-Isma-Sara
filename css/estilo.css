@@ -589,7 +589,7 @@ body {
     }
 }
 
-/* PAGINA PROTEINAS */
+/****************** PAGINA PROTEINAS ******************/
 
 /* BARRA DE BUSQUEDA */
 
@@ -632,13 +632,13 @@ body {
     filter: invert(1);
 }
 
-
+/* CONTAINER PROTEINAS */
 
 .containerProteinas{
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 40px;
+    padding: 0 40px;
 }
 
 .containerColProteinas { 
@@ -649,13 +649,16 @@ body {
 
 } 
 
-.containerProteinas .containerBotonItems{
+.containerBotonItems{
+    width: 100%;
+    max-width: 1200px;
     margin: 10px auto;
     display: flex;
+    padding: 0 40px;
 
 }
 
-.containerProteinas .botonItems{
+.containerBotonItems .botonItems{
     background-color: #439A97;
     color: white;
     display: flex;
@@ -670,7 +673,7 @@ body {
     box-shadow: 0 2px 5px #bcbebd;
 }
 
-.containerProteinas .botonItems:first-child{
+.containerBotonItems .botonItems:first-child{
     margin-right: 10px;
 }
 
@@ -679,7 +682,7 @@ body {
     background: #2b54b1;
 }
 
-.item { 
+.containerColProteinas .item { 
     background-color: #97DECE; 
     text-align: center; 
     padding-top: 5px; 
@@ -687,7 +690,7 @@ body {
     margin: 0 auto;
 
 }
-.item .icon_Editar{
+.containerColProteinas .item .icon_Editar{
     display: flex;
     float: right;
     position: relative;
@@ -701,7 +704,7 @@ body {
     border-radius: 5px;
 }
 
-.item .icon_Eliminar{
+.containerColProteinas .item .icon_Eliminar{
     display: flex;
     float: right;
     position: relative;
@@ -715,7 +718,7 @@ body {
     border-radius: 5px;
 }
 
-.item img{
+.containerColProteinas .item img{
     padding: 20px;
     background-color: #62B6B7;
     width: 100%;
@@ -726,7 +729,7 @@ body {
 
 @media screen and (max-width: 700px) { 
 
-    .containerProteinas .botonItems{
+    .containerBotonItems .botonItems{
         width: 100%;
     }
 
@@ -734,41 +737,114 @@ body {
         grid-template-columns: repeat(1, 1fr); 
     } 
 
-    .item img{
+    .containerColProteinas .item img{
         height: 90%;
         min-height: 250px;
 
     }
 
-    .item .icon_Editar{
+    .containerColProteinas .item .icon_Editar{
         min-height: initial;
     }
-    .item .icon_Eliminar{
+    .containerColProteinas .item .icon_Eliminar{
+        min-height: initial;
+    }
+} 
+
+/****************** PAGINA PHARMACS ******************/
+
+.containerFarmacos{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.containerColFarmacos { 
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr); 
+    column-gap: calc(50px + 1vw);
+    row-gap: calc(50px + 1vw);
+
+} 
+
+.containerColFarmacos .item { 
+    width: 100%;
+    display: flex;
+    background-color: #62B6B7;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.containerColFarmacos .item .icon_Editar{
+    display: flex;
+    float: right;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: initial;
+    top: -2.5px;
+    right: 15px;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.containerColFarmacos .item .icon_Eliminar{
+    display: flex;
+    float: right;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: initial;
+    top: -2.5px;
+    right: 10px;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.containerColFarmacos .item img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 350px;
+}
+
+.containerColFarmacos .item p{
+}
+
+
+@media screen and (max-width: 700px) { 
+
+    .containerBotonItems .botonItems{
+        width: 100%;
+    }
+
+    .containerColFarmacos .item img{
+        height: 90%;
+        min-height: 250px;
+
+    }
+
+    .containerColFarmacos .item .icon_Editar{
+        min-height: initial;
+    }
+
+    .containerColFarmacos .item .icon_Eliminar{
         min-height: initial;
     }
 } 
 
 
 
-/* CONTAINER GRANDE*/
 
-.container_grande_0 {
-    display: flex;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-    font-weight: bolder;
-    justify-content: center;
-}
 
-.container_grande {
-    display: flex;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-    font-weight: bolder;
-    justify-content: center;
-}
+
 
 
 /* COLUMNAS BOX_FARMACOS */
