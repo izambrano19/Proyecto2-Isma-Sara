@@ -41,9 +41,6 @@ if ($sele=="0")
 else 
 {
 
-  if($user == "editor"){
-
-  }
 $buscado=trim($_POST['nom'], " ");
 
 if (isset($buscado) && strlen($buscado)!=0) 
@@ -68,6 +65,8 @@ if ($numderows > 0)
     //$idCreador = $row["IDcreador"];
     $nombre = $row["Nombre"];
     $codi = $row["CodigoApp"];
+    $fecha = $row["Fecha"];
+    $estado = $row["Estado"];
     //$fecha = $row["fecha"];
     if($row["CodigoApp"]!=null) {
       
@@ -75,6 +74,8 @@ if ($numderows > 0)
             <div id='container'>
               $idFarmaco
               $nombre
+              $fecha
+              $estado
               <img class='proteinas' src='img/proteinas/proteina-3.jpg'>
             </div>
           
