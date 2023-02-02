@@ -12,7 +12,6 @@ if (mysqli_num_rows($resultado) > 0) {
     
     while($row = mysqli_fetch_assoc($resultado)) {
         
-        
         $IDUsuario = $row["IDUsuario"];
         $nombreUsuario = $row["NombreUsuario"];
         $password = $row["Password"];
@@ -27,8 +26,7 @@ if (mysqli_num_rows($resultado) > 0) {
         echo"<script>console.log('si entra');</script>";
 
         
-    }
-    else{
+    }else{
         header("Location: pagina-secreta.php");
         echo"<script>console.log('no entra');</script>";
     }

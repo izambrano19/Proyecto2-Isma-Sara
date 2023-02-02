@@ -21,7 +21,7 @@ else $sele="0";
 </head>
 <body>
 
-<form action="buscardocente.php" class="form_container"  method="post" name="formu">
+<form action="searchFarmac.php" class="form_container"  method="post" name="formu">
 <table border="1">
 <tr>
 <td>nombre: </td><td><input name="nom" type="text" class="inputs" value="" required/></td>
@@ -33,17 +33,22 @@ else $sele="0";
 </form>
 <?php
 if ($sele=="0") 
-{	
+{
+  
 ?>
 <?php 
 } 
 else 
 {
+
+  if($user == "editor"){
+
+  }
 $buscado=trim($_POST['nom'], " ");
 
 if (isset($buscado) && strlen($buscado)!=0) 
 {	
-$sql="SELECT * FROM tproteinas WHERE Nombre LIKE '".$buscado."%';";
+$sql="SELECT * FROM tfarmacos WHERE Nombre LIKE '".$buscado."%';";
 
 echo "<br>".$sql."<br>";
 $resultado = mysqli_query($conexion, $sql);
@@ -59,7 +64,7 @@ if ($numderows > 0)
 
   while($row = mysqli_fetch_assoc($resultado)) 
   {
-    $idProteina = $row["IDProteina"];
+    $idFarmaco = $row["IDFarmaco"];
     //$idCreador = $row["IDcreador"];
     $nombre = $row["Nombre"];
     $codi = $row["CodigoApp"];
@@ -68,7 +73,7 @@ if ($numderows > 0)
       
     echo "
             <div id='container'>
-              $idProteina
+              $idFarmaco
               $nombre
               <img class='proteinas' src='img/proteinas/proteina-3.jpg'>
             </div>
