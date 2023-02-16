@@ -611,6 +611,10 @@ body {
   font-weight: bold;
 }
 
+.field button{
+  cursor: pointer;
+}
+
 .field>input[type=text] {
   flex: 1;
   padding: 0.6em;
@@ -633,6 +637,11 @@ body {
 }
 
 /* CONTAINER PROTEINAS */
+
+.numero_P{
+    padding: 0 40px;
+    text-transform: uppercase;
+}
 
 .containerProteinas{
     width: 100%;
@@ -806,14 +815,14 @@ div.pagination li a {
     border-bottom-right-radius: 5px;
 }
 
-div.pagination li a.current-page {
+div.pagination li a.pagina-actual {
     background-color: #62B6B7;
     color: white;
 }
 
 
 
-div.pagination li a:hover:not(.current-page) {
+div.pagination li a:hover:not(.pagina-actual) {
     background-color: #ddd;
     color: black;
 }

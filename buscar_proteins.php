@@ -9,13 +9,22 @@ include_once('connexiosaraismabbdd.php');
         <h2 style="text-align: center">PROTEINS</h2>
     </div>
 <br>
+<?php
 
+ $busqueda = strtolower($_REQUEST['busqueda']);
+
+ if(empty($busqueda)){
+  header("location: proteins.php");
+ }
+
+
+?>
 <!-- BARRA DE NAVEGACION -->
 
 <form action="buscar_proteins.php" class="form_container"  method="get" name="formu">
 
 <div class="field" id="searchform">
-  <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca una proteina" />
+  <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca una proteina" value="<?php echo $busqueda; ?>"/>
   <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png"></button>
 </div>
 </form>
@@ -31,7 +40,8 @@ include_once('connexiosaraismabbdd.php');
 
   /* PAGINADOR */
 
-  $sql_registro = mysqli_query($conexion, "SELECT COUNT(*) as total_registro FROM tproteinas");
+  $sql_registro = mysqli_query($conexion, "SELECT COUNT(*) as total_registro FROM tproteinas 
+  WHERE Nombre LIKE '%$busqueda%'");
 
   $resultado_registro = mysqli_fetch_assoc($sql_registro);
   $total_registro = $resultado_registro['total_registro'];
@@ -47,7 +57,9 @@ include_once('connexiosaraismabbdd.php');
   $desde = ($pagina -1) * $por_pagina;
   $total_paginas = ceil($total_registro / $por_pagina);
 
-  $sql = mysqli_query($conexion, "SELECT * FROM tproteinas ORDER BY Nombre ASC LIMIT $desde,$por_pagina
+  $sql = mysqli_query($conexion, "SELECT * FROM tproteinas 
+  WHERE Nombre LIKE '%$busqueda%'
+  ORDER BY Nombre ASC LIMIT $desde,$por_pagina 
   ");
   
   $resultado= mysqli_num_rows($sql);
@@ -105,19 +117,19 @@ include_once('connexiosaraismabbdd.php');
     <div class="pagination">
   <?php
   if ($pagina > 1) {
-    echo "<li><a href='?pagina=".($pagina-1)."'>Anterior</a></li>";
+    echo "<li><a href='?pagina=".($pagina-1)."&busqueda=".$busqueda."'>Anterior</a></li>";
   }
 
   for ($i = 1; $i <= $total_paginas; $i++) {
     if ($i == $pagina) {
       echo "<li><a class='pagina-actual'>$i</a></li>";
     } else {
-      echo "<li><a href='?pagina=$i'>$i</a></li>";
+      echo "<li><a href='?pagina=$i.&busqueda=".$busqueda."'>$i</a></li>";
     }
   }
 
   if ($pagina < $total_paginas) {
-    echo "<li><a href='?pagina=".($pagina+1)."'>Siguiente</a></li>";
+    echo "<li><a href='?pagina=".($pagina+1)."&busqueda=".$busqueda."'>Siguiente</a></li>";
   }
   ?>
 </div>
