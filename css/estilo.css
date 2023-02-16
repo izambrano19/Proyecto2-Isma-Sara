@@ -529,6 +529,8 @@ body {
     color: black;
     width: 100%;
     position: absolute;
+
+    
 }
 
 .pie-pagina .grupo-1 {
@@ -647,7 +649,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 40px;
+    padding: 20px 40px;
 }
 
 .containerColProteinas { 

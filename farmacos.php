@@ -6,16 +6,16 @@ include_once('connexiosaraismabbdd.php');
 ?>
 
     <div style="margin-top: 100px">
-        <h2 style="text-align: center">PROTEINS</h2>
+        <h2 style="text-align: center">FÁRMACOS</h2>
     </div>
 <br>
 
 <!-- BARRA DE NAVEGACION -->
 
-<form action="buscar_proteins.php" class="form_container"  method="get" name="formu">
+<form action="buscar_farmacos.php" class="form_container"  method="get" name="formu">
 
 <div class="field" id="searchform">
-  <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca una proteina" />
+  <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca un fármaco" />
   <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png"></button>
 </div>
 </form>
@@ -31,7 +31,7 @@ include_once('connexiosaraismabbdd.php');
 
   /* PAGINADOR */
 
-  $sql_registro = mysqli_query($conexion, "SELECT COUNT(*) as total_registro FROM tproteinas");
+  $sql_registro = mysqli_query($conexion, "SELECT COUNT(*) as total_registro FROM tfarmacos");
 
   $resultado_registro = mysqli_fetch_assoc($sql_registro);
   $total_registro = $resultado_registro['total_registro'];
@@ -47,7 +47,7 @@ include_once('connexiosaraismabbdd.php');
   $desde = ($pagina -1) * $por_pagina;
   $total_paginas = ceil($total_registro / $por_pagina);
 
-  $sql = mysqli_query($conexion, "SELECT * FROM tproteinas ORDER BY Nombre ASC LIMIT $desde,$por_pagina
+  $sql = mysqli_query($conexion, "SELECT * FROM tfarmacos ORDER BY Nombre ASC LIMIT $desde,$por_pagina
   ");
   
   $resultado= mysqli_num_rows($sql);
@@ -61,9 +61,9 @@ include_once('connexiosaraismabbdd.php');
       $fecha = $row["Fecha"];
       $nombreFichero = $row["NombreFichero"];
       $tipoFichero = $row["TipoFichero"];
-      $especie = $row["Especie"];
-      $metodo = $row["Metodo"];
-      $resolucion = $row["Resolucion"];
+      $smiles = $row["Smiles"];
+      $inChl = $row["InChl"];
+      $estado = $row["Estado"];
   
 
 ?>
@@ -79,13 +79,13 @@ include_once('connexiosaraismabbdd.php');
               </div>
           </div>
           <div class='item'> 
-              <img src='img/proteinas/proteina-1.png'>
+              <img src='img/farmacos/gelocatil.jpg'>
               <div class='container_info'>
                 <p>Nombre de fichero: <?php echo"$nombreFichero" ?> </p>
                 <p>Tipo de fichero: <?php echo"$tipoFichero" ?> </p>
-                <p>Especie: <?php echo"$especie" ?> </p>
-                <p>Método: <?php echo"$metodo" ?> </p>
-                <p>Resolución: <?php echo"$resolucion" ?> </p>
+                <p>Smiles: <?php echo"$smiles" ?> </p>
+                <p>InChl: <?php echo"$inChl" ?> </p>
+                <p>Estado: <?php echo"$estado" ?> </p>
             </div>
           </div> 
       </div>

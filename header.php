@@ -72,8 +72,8 @@ else echo "0 filas";
                     <ul id="menu-nav">
                         <li><a href='index.php' id='selected'>HOMEPAGE</a></li>
                         <li><a href="statistics.php">STATISTICS</a></li>
-                        <li><a href="proteins.php">PROTEINS</a></li>
-                        <li><a href="drugs.php">PHARMACS</a></li>
+                        <li><a href="proteinas.php">PROTEINAS</a></li>
+                        <li><a href="farmacos.php">FÁRMACOS</a></li>
  
                         <script>
                             
