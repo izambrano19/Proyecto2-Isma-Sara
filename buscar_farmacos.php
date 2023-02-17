@@ -14,7 +14,7 @@ include_once('connexiosaraismabbdd.php');
  $busqueda = strtolower($_REQUEST['busqueda']);
 
  if(empty($busqueda)){
-  header("location: farmacs.php");
+  header("location: farmacos.php");
  }
 
 

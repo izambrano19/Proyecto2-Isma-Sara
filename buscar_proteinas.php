@@ -86,9 +86,9 @@ include_once('connexiosaraismabbdd.php');
               <div class='nombreProteina'>
                   <p> CodeApp: <?php echo"$codigoApp" ?> | Fecha: <?php echo"$fecha" ?> | Nombre: <?php echo"$nombre" ?> </p>
               </div>
-              <div class='iconos'>
-              <img class='icon_Editar' src='https://img.icons8.com/pastel-glyph/64/null/edit--v1.png'/>
-                  <img class='icon_Eliminar' src='https://img.icons8.com/ios-filled/256/delete.png'/>
+              <div class="iconos">
+              <button style="border: 0; background-color: #f0f8ff00" type="submit" name="accion" value="editar"><img class="icon_Editar" src="https://img.icons8.com/pastel-glyph/64/null/edit--v1.png"></button>
+              <a href="eliminar_proteina.php?id_proteina=<?php echo $id_proteina;?>"><img class="icon_Eliminar" src="https://img.icons8.com/ios-filled/256/delete.png"></a>
               </div>
           </div>
           <div class='item'> 
