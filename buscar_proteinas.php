@@ -126,7 +126,7 @@ include_once('connexiosaraismabbdd.php');
     if ($i == $pagina) {
       echo "<li><a class='pagina-actual'>$i</a></li>";
     } else {
-      echo "<li><a href='?pagina=$i.&busqueda=".$busqueda."'>$i</a></li>";
+      echo "<li><a href='?pagina=".$i."&busqueda=".$busqueda."'>$i</a></li>";
     }
   }
 
