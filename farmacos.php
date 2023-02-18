@@ -74,10 +74,22 @@ include_once('connexiosaraismabbdd.php');
               <div class='nombreProteina'>
                   <p> CodeApp: <?php echo"$codigoApp" ?> | Fecha: <?php echo"$fecha" ?> | Nombre: <?php echo"$nombre" ?> </p>
               </div>
-              <div class="iconos">
-              <button style="border: 0; background-color: #f0f8ff00" type="submit" name="accion" value="editar"><img class="icon_Editar" src="https://img.icons8.com/pastel-glyph/64/null/edit--v1.png"></button>
-              <a href="eliminar_farmaco.php?id_farmaco=<?php echo $id_farmaco;?>"><img class="icon_Eliminar" src="https://img.icons8.com/ios-filled/256/delete.png"></a>
-              </div>
+
+              <?php
+                if(!empty($_SESSION['tipo'])){
+                    $admin = ($_SESSION['tipo'] == 'admin') ? true : false;
+                    if($admin === true){
+                      echo '
+                      <div class="iconos">
+                      <button style="border: 0; background-color: #f0f8ff00" type="submit" name="accion" value="editar"><img class="icon_Editar" src="https://img.icons8.com/pastel-glyph/64/null/edit--v1.png"></button>
+                      <a href="eliminar_farmaco.php?id_farmaco='.$id_farmaco.'"><img class="icon_Eliminar" src="https://img.icons8.com/ios-filled/256/delete.png"></a>
+                      </div>';
+                    }
+                  }
+                
+                ?>
+
+
           </div>
           <div class='item'> 
               <img src='img/farmacos/gelocatil.jpg'>

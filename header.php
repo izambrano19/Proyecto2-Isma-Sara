@@ -3,27 +3,6 @@ include_once('connexiosaraismabbdd.php');
 
 session_start();
 
-$sql="SELECT NombreUsuario, Password, Tipo FROM tusuario";
-
-$resultado = mysqli_query($conexion, $sql);
-
-if (mysqli_num_rows($resultado) > 0) {
-    
-    while($row = mysqli_fetch_assoc($resultado)) {
-
-        $nombreUsuario = $row["NombreUsuario"];
-        $tipo = $row["Tipo"];
-
-        if(isset($_SESSION["usuario"])){
-
-            if($_SESSION["usuario"] == $nombreUsuario){
-                $tipoActual = $tipo;
-            }
-        }
-    }
-}
-else echo "0 filas";
-
 ?>
 
 <!DOCTYPE html>
@@ -74,36 +53,29 @@ else echo "0 filas";
                         <li><a href="statistics.php">STATISTICS</a></li>
                         <li><a href="proteinas.php">PROTEINAS</a></li>
                         <li><a href="farmacos.php">FÁRMACOS</a></li>
- 
+
                         <script>
+
+                                <?php
+
+                            if(!empty($_SESSION['activo'])){
+                                echo '$("ul").append($("<li><a href=\'salir.php\'><img class=\'icono-cerrarsesion\' src=\'img/iconos/icono-cerrarsesion.png\'></a></li>"));';
+
+                            }else{
+                                echo '$("ul").append($("<li><a href=\'login.php\'>LOG IN</a></li>"));';
+                            }
                             
-                            $(document).ready(function() {
 
-                                let comprobarSesion = '<?php echo isset($_SESSION["usuario"]) ? $_SESSION["usuario"] : 0; ?>';
-                                let tipo = '<?php echo isset($tipoActual) ? $tipoActual : 0; ?>';
+                   
 
-                                if(comprobarSesion != 0){
 
-                                    if(tipo == "admin"){
-                                        console.log("admin");
-                                        $("ul").append($("<li><a href='createUser.php'>CREATE USER</a></li>"));
+                            
+                            ?>
+                                
 
-                                    }
-                                    else if(tipo == "editor"){
-                                        console.log("editor");
-                                    }
-                                    $("ul").append($("<li><a href='cerrar-sesion.php'><img class='icono-cerrarsesion' src='img/iconos/icono-cerrarsesion.png'></a></li>"));
-
-                                }
-                                else{
-                                    /*
-                                    $("ul").append($("<li><a href='login.php'>LOG IN</a></li>"));
-                                    */
-                                }
-   
-                            })
 
                          </script>
+
 
                     </ul>
 
