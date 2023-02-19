@@ -59,7 +59,14 @@ session_start();
                                 <?php
 
                             if(!empty($_SESSION['activo'])){
+
+                                if(($_SESSION['tipo']) == "admin" ){
+                                    echo '$("ul").append($("<li><a href=\'registrar_usuario.php\'>REGISTRAR USUARIO</a></li>"));';
+
+                                }
+
                                 echo '$("ul").append($("<li><a href=\'salir.php\'><img class=\'icono-cerrarsesion\' src=\'img/iconos/icono-cerrarsesion.png\'></a></li>"));';
+
 
                             }else{
                                 echo '$("ul").append($("<li><a href=\'login.php\'>LOG IN</a></li>"));';

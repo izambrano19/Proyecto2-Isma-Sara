@@ -47,13 +47,15 @@ if(!empty($_POST)){
     <meta charset="UTF-8">
     <title>LOG IN</title>
     <link rel="shorcut icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-    <form action="login.php" id="formulario" method="post">
+
+<div class="container_login">
+    <form class="login" action="login.php" id="formulario" method="post">
         <h1 class="title">Log in</h1>
         <label for="username">  
             <i class="fa-solid fa-user"></i>
@@ -68,7 +70,7 @@ if(!empty($_POST)){
         <input type="submit" value="Iniciar sesión" class="button">
 
     </form>
-
+</div>
     <script src="login.js"></script>
 </body>
 </html>
