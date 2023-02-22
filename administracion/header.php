@@ -9,7 +9,7 @@ if(empty($_SESSION['activo'])){
 
     <div class="header">
         <h1>ADMINISTRACIÓN</h1>
-        <li><a class="salir" href="salir.php">SALIR</a></li>
+        <li><a class="salir" href="salir.php"><i class="fa-solid fa-power-off"></i></a></li>
 
         </div>
         <?php include_once("nav.php") ;?>

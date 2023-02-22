@@ -10,7 +10,7 @@
 /********************* PAGINA HEADER ********************/
 
 .header{
-    background-color: rgb(214, 105, 105);
+    background-color: rgb(107 105 214);
     display: flex;
     justify-content: space-between;
 }
