@@ -113,7 +113,7 @@
 
 .container h1{
     font-size: 30px;
-    display: flex;
+    margin: auto;
 }
 
 .container_arriba{
@@ -127,11 +127,9 @@
     display: flex;
     background-color: #00799b;
     color: #FFF;
-    padding: 5px 25px;
+    padding: 10px 25px;
     border-radius: 4px;
-    margin: 0 20px;
-    align-items: center;
-    justify-content: center;
+    margin: auto 20px;
 }
 
 table{

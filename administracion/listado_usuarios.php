@@ -23,7 +23,7 @@ include_once('connexiosaraismabbdd.php');
   <div class="container_arriba">
     <div style="display: flex">
 <h1>LISTADO DE USUARIOS</h1>
-<a href="crear_usuario.php" class="btn_nuevo"><i class="fa-solid fa-user-plus"></i> CREAR USUARIO</a>
+<a href="crear_usuario.php" class="btn_nuevo"><i class="fa-solid fa-user-plus"></i>&nbsp CREAR USUARIO</a>
 </div>
 <form action="buscar_usuarios.php" class="form_busqueda"  method="get" name="formu">
 
