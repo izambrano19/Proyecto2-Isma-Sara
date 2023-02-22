@@ -22,7 +22,7 @@ if($sql_delete){
 
     $dni_usuario = $_REQUEST['DNI'];
 
-    $sql = mysqli_query($conexion, "SELECT NombreUsuario, DNI, Tipo FROM tusuario WHERE DNI = $dni_usuario");
+    $sql = mysqli_query($conexion, "SELECT NombreUsuario, DNI, Tipo FROM tusuario WHERE DNI = '$dni_usuario'");
 
     $resultado = mysqli_num_rows($sql);
 
