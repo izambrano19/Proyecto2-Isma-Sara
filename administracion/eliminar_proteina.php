@@ -44,8 +44,6 @@ if($sql_delete){
 
 ?>
 
-<?php
-?>
 
 
 <!DOCTYPE html>
