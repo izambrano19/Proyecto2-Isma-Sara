@@ -23,7 +23,7 @@ if(!empty($_POST)){
             $row = mysqli_fetch_assoc($query);
             session_start();
             $_SESSION['activo'] = true;
-            $_SESSION['idUsuario'] = $row['IDUsuario'];
+            $_SESSION['DNI'] = $row['DNI'];
             $_SESSION['nombre'] = $row['NombreUsuario']; 
             $_SESSION['tipo'] = $row['Tipo']; 
 
@@ -72,7 +72,6 @@ if(!empty($_POST)){
         <a href="" class="link">Forgot your password?</a>
         <br>
         <input type="submit" value="Iniciar sesión" class="button">
-
     </form>
 </div>
     <script src="login.js"></script>

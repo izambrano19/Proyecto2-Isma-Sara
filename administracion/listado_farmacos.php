@@ -7,29 +7,21 @@
 </head>
 <body>
     <?php include_once("header.php")?>
-<br>
-<br>
-<br>
-        <h2 style="text-align: center">FÁRMACOS</h2>
-<br>
 
-<!-- BARRA DE NAVEGACION -->
-
-<form action="buscar_farmacos.php" class="form_container"  method="get" name="formu">
-
-<div class="field" id="searchform">
-  <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca un fármaco" />
-  <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png"></button>
-</div>
-</form>
-
-<div class="containerBotonItems">
-  <input class="botonItems" type="button" value="NEW ITEM">
-  <input class="botonItems" type="button" value="MY ITEM">
-</div>
-
-<div class='containerProteinas'> 
-
+    
+    <div class="container">
+      <div class="container_arriba">
+        <div style="display: flex">
+          <h1>LISTADO DE FÁRMACOS</h1>
+          <a href="crear_farmaco.php" class="btn_nuevo"><i class="fa-solid fa-user-plus"></i>&nbsp CREAR FÁRMACO</a>
+        </div>
+          <form action="buscar_farmacos.php" class="form_busqueda"  method="get" name="formu">
+            <div style="display: flex">
+              <input id="busqueda" name="busqueda" type="text" placeholder="Buscar" class="input_busqueda"/>
+              <input type="submit" value="buscar" class="btn_busqueda"/>
+            </div>
+          </form>
+        </div>
 <?php
 
   /* PAGINADOR */
@@ -56,6 +48,23 @@
   $resultado= mysqli_num_rows($sql);
 
   if($resultado > 0){
+    ?>
+    <table>
+      <tr>
+        <th>IDFarmaco</th>
+        <th>Nombre</th>
+        <th>CodigoApp</th>
+        <th>Fecha</th>
+        <th>NombreFichero</th>
+        <th>TipoFichero</th>
+        <th>Smiles</th>
+        <th>InChl</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    
+    <?php
+
 
     while ($row = mysqli_fetch_assoc($sql)) {
       
@@ -69,20 +78,26 @@
       $inChl = $row["InChl"];
       $estado = $row["Estado"];
   
-      echo "IDProteina: .$id_farmaco.";
-      echo "Nombre: .$nombre.";
-      echo "CodigoApp: .$codigoApp.";
-      echo "Fecha: .$fecha.";
-      echo "NombreFichero: .$nombreFichero.";
-      echo "TipoFichero: .$tipoFichero.";
-      echo "Smiles: .$smiles.";
-      echo "InChl: .$inChl.";
-      echo "Estado: .$estado.";
-
       ?>
-      <a href="editar_farmaco.php?id_farmaco=<?php echo $id_farmaco; ?>"> EDITAR </a>
-      <a href="eliminar_farmaco.php?id_farmaco=<?php echo $id_farmaco; ?>"> ELIMINAR </a>
-      <br>
+
+      <tr>
+        <td><?php echo $id_farmaco; ?></td>
+        <td><?php echo $nombre; ?></td>
+        <td><?php echo $codigoApp; ?></td>
+        <td><?php echo $fecha; ?></td>
+        <td><?php echo $nombreFichero; ?></td>
+        <td><?php echo $tipoFichero; ?></td>
+        <td><?php echo $smiles; ?></td>
+        <td><?php echo $inChl; ?></td>
+        <td><?php echo $estado; ?></td>
+        <td>
+          <a class="link_editar" href="editar_farmaco.php?id_farmaco=<?php echo $id_farmaco;?>">EDITAR</a>
+          |
+          <a class="link_eliminar" href="eliminar_farmaco.php?id_farmaco=<?php echo $id_farmaco;?>">ELIMINAR</a>  
+        </td>
+      </tr>
+      
+      
       <?php
 
 
@@ -93,9 +108,9 @@
   echo "<h3 style='text-align:-webkit-center'>No encontrado</h3>";
 }
     ?>
+
+</table>
     </div>
-
-
     
     <div class="pagination">
   <?php

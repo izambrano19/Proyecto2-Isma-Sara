@@ -3,32 +3,39 @@
 
 if(!empty($_POST)){
     $alert="";
-    if(empty($_POST["nombre"]) || empty($_POST["dni"]) || empty($_POST["password"]) || empty($_POST["tipo"])){
+    if(empty($_POST["nombre"]) || empty($_POST["codigoApp"]) || empty($_POST["fecha"]) || empty($_POST["nombreFichero"]) || 
+    empty($_POST["tipoFichero"]) || empty($_POST["smiles"]) || empty($_POST["inChl"]) || empty($_POST["estado"])){
 
         $alert="<p class='msg_error'>Todos los campos son obligatorios</p>";
     }else{
         include_once('connexiosaraismabbdd.php');
 
         $nombre = $_POST["nombre"];
-        $dni = $_POST["dni"];
-        $pass = md5($_POST["password"]);
-        $tipo = $_POST["tipo"];
+        $codigoApp = $_POST["codigoApp"];
+        $fecha = $_POST["fecha"];
+        $nombreFichero = $_POST["nombreFichero"];
+        $tipoFichero = $_POST["tipoFichero"];
+        $smiles = $_POST["smiles"];
+        $inChl = $_POST["inChl"];
+        $estado = $_POST["estado"];
+
+        $DNICreador = $_POST['DNICreador'];
 
 
-        $query = mysqli_query($conexion,"SELECT * FROM tusuario WHERE DNI = '$dni'");
+        $query = mysqli_query($conexion,"SELECT * FROM tfarmacos WHERE Nombre = '$nombre'");
         $resultado = mysqli_fetch_assoc($query);
 
         if($resultado > 0){
-            $alert="<p class='msg_error'>El usuario ya existe</p>";
+            $alert="<p class='msg_error'>El fármaco ya existe</p>";
         }else{
 
-            $query_insertar = mysqli_query($conexion, "INSERT INTO tusuario (DNI, Tipo, NombreUsuario, Password)
-            VALUES('$dni','$tipo','$nombre','$pass')");
+            $query_insertar = mysqli_query($conexion, "INSERT INTO tfarmacos (Nombre, CodigoApp, Fecha, NombreFichero, TipoFichero, Smiles, InChl, Estado, DNICreador)
+            VALUES('$nombre','$codigoApp','$fecha','$nombreFichero','$tipoFichero','$smiles','$inChl','$estado','$DNICreador')");
 
             if($query_insertar){
-                $alert="<p class='msg_correcto'>El usuario ha sido creado correctamente</p>";
+                $alert="<p class='msg_correcto'>El fármaco ha sido creado correctamente</p>";
             }else{
-                $alert="<p class='msg_error'>Error al crear el usuario</p>";
+                $alert="<p class='msg_error'>Error al crear el fármaco</p>";
             }
         }
     }
@@ -51,35 +58,40 @@ if(!empty($_POST)){
 <br>
 
 
-
 <div class="container_registrar">
 
 
-<h1>CREAR USUARIO</h1>
+<h1>CREAR FÁRMACO</h1>
 <hr>
 <div class="alert"> <?php echo isset($alert) ? $alert : ''; ?> </div>
 
 <form action="" method="post">
+
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
 
+    <label for="codigoApp">codigoApp</label>
+    <input type="text" name="codigoApp" id="codigoApp" placeholder="CodigoApp" minlength="9" maxlength="9">
 
-    <label for="dni">DNI</label>
-    <input type="text" name="dni" id="dni" placeholder="DNI" minlength="9" maxlength="9">
+    <label for="fecha">fecha</label>
+    <input type="date" name="fecha" id="fecha">
 
+    <label for="nombreFichero">nombreFichero</label>
+    <input type="text" name="nombreFichero" id="nombreFichero">
 
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" id="password" placeholder="Contraseña">
+    <label for="tipoFichero">tipoFichero</label>
+    <input type="text" name="tipoFichero" id="tipoFichero">
 
+    <label for="smiles">smiles</label>
+    <input type="text" name="smiles" id="smiles">
 
-    <label for="tipo">Tipo Usuario</label>
+    <label for="inChl">inChl</label>
+    <input type="text" name="inChl" id="inChl">
 
-    <select name="tipo" id="tipo">
+    <label for="estado">estado</label>
+    <input type="text" name="estado" id="estado">
 
-        <option value="admin">admin</option>
-        <option value="editor">editor</option>
-
-    </select>
+    <input type="hidden" id="DNICreador" name="DNICreador" value="<?php echo $_SESSION['DNI']; ?>"/>
 
     <input class="btn_guardar" type="submit" value="Crear usuario">
 

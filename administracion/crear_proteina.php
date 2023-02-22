@@ -55,7 +55,7 @@ if(!empty($_POST)){
 <div class="container_registrar">
 
 
-<h1>CREAR USUARIO</h1>
+<h1>CREAR PROTEINA</h1>
 <hr>
 <div class="alert"> <?php echo isset($alert) ? $alert : ''; ?> </div>
 

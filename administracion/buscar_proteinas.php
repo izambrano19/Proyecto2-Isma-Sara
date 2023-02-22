@@ -9,12 +9,7 @@
 </head>
 <body>
     <?php include_once("header.php")?>
-<br>
-<br>
-<br>
 
-        <h2 style="text-align: center">PROTEINAS</h2>
-<br>
 <?php
 
  $busqueda = strtolower($_REQUEST['busqueda']);
@@ -27,21 +22,22 @@
 ?>
 <!-- BARRA DE NAVEGACION -->
 
-<form action="buscar_proteinas.php" class="form_container"  method="get" name="formu">
-
-<div class="field" id="searchform">
-  <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca una proteina" value="<?php echo $busqueda; ?>"/>
-  <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png"></button>
+<div class="container">
+  <div class="container_arriba">
+    <div style="display: flex">
+<h1>LISTADO DE PROTEÍNAS</h1>
+<a href="crear_proteina.php" class="btn_nuevo"><i class="fa-solid fa-user-plus"></i>&nbsp CREAR PROTEÍNA</a>
 </div>
+<form action="buscar_proteinas.php" class="form_busqueda"  method="get" name="formu">
+
+    <div style="display: flex">
+      <input id="busqueda" name="busqueda" type="text" placeholder="Buscar" class="input_busqueda" value="<?php echo $busqueda; ?>"/>
+      <input type="submit" value="buscar" class="btn_busqueda"/>
+  </div>
+
 </form>
 
-<div class="containerBotonItems">
-  <input class="botonItems" type="button" value="NEW ITEM">
-  <input class="botonItems" type="button" value="MY ITEM">
 </div>
-
-<div class='containerProteinas'> 
-
 <?php
 
   /* PAGINADOR */
@@ -72,6 +68,23 @@
 
   if($resultado > 0){
 
+    ?>
+    <table>
+      <tr>
+        <th>IDProteina</th>
+        <th>Nombre</th>
+        <th>CodigoApp</th>
+        <th>Fecha</th>
+        <th>NombreFichero</th>
+        <th>TipoFichero</th>
+        <th>Especie</th>
+        <th>Metodo</th>
+        <th>Resolucion</th>
+        <th>Acciones</th>
+      </tr>
+    
+    <?php
+
     while ($row = mysqli_fetch_assoc($sql)) {
 
       $id_proteina = $row["IDProteina"];
@@ -84,22 +97,26 @@
       $metodo = $row["Metodo"];
       $resolucion = $row["Resolucion"];
   
-
-
-      echo "IDProteina: .$id_proteina.";
-      echo "Nombre: .$nombre.";
-      echo "CodigoApp: .$codigoApp.";
-      echo "Fecha: .$fecha.";
-      echo "NombreFichero: .$nombreFichero.";
-      echo "TipoFichero: .$tipoFichero.";
-      echo "Especie: .$especie.";
-      echo "Metodo: .$metodo.";
-      echo "Resolucion: .$resolucion.";
-
       ?>
-      <a href="editar_proteina.php?id_proteina=<?php echo $id_proteina; ?>"> EDITAR </a>
-      <a href="eliminar_proteina.php?id_proteina=<?php echo $id_proteina; ?>"> ELIMINAR </a>
-      <br>
+
+      <tr>
+        <td><?php echo $id_proteina; ?></td>
+        <td><?php echo $nombre; ?></td>
+        <td><?php echo $codigoApp; ?></td>
+        <td><?php echo $fecha; ?></td>
+        <td><?php echo $nombreFichero; ?></td>
+        <td><?php echo $tipoFichero; ?></td>
+        <td><?php echo $especie; ?></td>
+        <td><?php echo $metodo; ?></td>
+        <td><?php echo $resolucion; ?></td>
+        <td>
+          <a class="link_editar" href="editar_proteina.php?id_proteina=<?php echo $id_proteina;?>">EDITAR</a>
+          |
+          <a class="link_eliminar" href="eliminar_proteina.php?id_proteina=<?php echo $id_proteina;?>">ELIMINAR</a>  
+        </td>
+      </tr>
+      
+      
       <?php
 
       }
@@ -109,6 +126,8 @@
   echo "<h3 style='text-align:-webkit-center'>No encontrado</h3>";
 }
     ?>
+
+</table>
     </div>
 
 
