@@ -3,32 +3,39 @@
 
 if(!empty($_POST)){
     $alert="";
-    if(empty($_POST["nombre"]) || empty($_POST["dni"]) || empty($_POST["password"]) || empty($_POST["tipo"])){
+    if(empty($_POST["nombre"]) || empty($_POST["codigoApp"]) || empty($_POST["fecha"]) || empty($_POST["nombreFichero"]) || 
+    empty($_POST["tipoFichero"]) || empty($_POST["especie"]) || empty($_POST["metodo"]) || empty($_POST["resolucion"])){
+
 
         $alert="<p class='msg_error'>Todos los campos son obligatorios</p>";
     }else{
         include_once('connexiosaraismabbdd.php');
 
         $nombre = $_POST["nombre"];
-        $dni = $_POST["dni"];
-        $pass = md5($_POST["password"]);
-        $tipo = $_POST["tipo"];
+        $codigoApp = $_POST["codigoApp"];
+        $fecha = $_POST["fecha"];
+        $nombreFichero = $_POST["nombreFichero"];
+        $tipoFichero = $_POST["tipoFichero"];
+        $especie = $_POST["especie"];
+        $metodo = $_POST["metodo"];
+        $resolucion = $_POST["resolucion"];
+        $DNICreador = $_POST['DNICreador'];
 
 
-        $query = mysqli_query($conexion,"SELECT * FROM tusuario WHERE DNI = '$dni'");
+        $query = mysqli_query($conexion,"SELECT * FROM tproteinas WHERE Nombre = '$nombre'");
         $resultado = mysqli_fetch_assoc($query);
 
         if($resultado > 0){
-            $alert="<p class='msg_error'>El usuario ya existe</p>";
+            $alert="<p class='msg_error'>La proteína ya existe</p>";
         }else{
 
-            $query_insertar = mysqli_query($conexion, "INSERT INTO tusuario (DNI, Tipo, NombreUsuario, Password)
-            VALUES('$dni','$tipo','$nombre','$pass')");
+            $query_insertar = mysqli_query($conexion, "INSERT INTO tproteinas (Nombre, CodigoApp, Fecha, NombreFichero, TipoFichero, Especie, Metodo, Resolucion, DNICreador)
+            VALUES('$nombre','$codigoApp','$fecha','$nombreFichero','$tipoFichero','$especie','$metodo','$resolucion','$DNICreador')");
 
             if($query_insertar){
-                $alert="<p class='msg_correcto'>El usuario ha sido creado correctamente</p>";
+                $alert="<p class='msg_correcto'>La proteína ha sido creado correctamente</p>";
             }else{
-                $alert="<p class='msg_error'>Error al crear el usuario</p>";
+                $alert="<p class='msg_error'>Error al crear la proteína</p>";
             }
         }
     }
@@ -36,8 +43,6 @@ if(!empty($_POST)){
 
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -60,28 +65,34 @@ if(!empty($_POST)){
 <div class="alert"> <?php echo isset($alert) ? $alert : ''; ?> </div>
 
 <form action="" method="post">
+
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
 
+    <label for="codigoApp">codigoApp</label>
+    <input type="text" name="codigoApp" id="codigoApp" placeholder="CodigoApp" minlength="9" maxlength="9">
 
-    <label for="dni">DNI</label>
-    <input type="text" name="dni" id="dni" placeholder="DNI" minlength="9" maxlength="9">
+    <label for="fecha">fecha</label>
+    <input type="date" name="fecha" id="fecha">
 
+    <label for="nombreFichero">nombreFichero</label>
+    <input type="text" name="nombreFichero" id="nombreFichero">
 
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" id="password" placeholder="Contraseña">
+    <label for="tipoFichero">tipoFichero</label>
+    <input type="text" name="tipoFichero" id="tipoFichero">
 
+    <label for="especie">especie</label>
+    <input type="text" name="especie" id="especie">
 
-    <label for="tipo">Tipo Usuario</label>
+    <label for="metodo">metodo</label>
+    <input type="text" name="metodo" id="metodo">
 
-    <select name="tipo" id="tipo">
+    <label for="resolucion">resolucion</label>
+    <input type="text" name="resolucion" id="resolucion">
 
-        <option value="admin">admin</option>
-        <option value="editor">editor</option>
+    <input type="hidden" id="DNICreador" name="DNICreador" value="<?php echo $_SESSION['DNI']; ?>"/>
 
-    </select>
-
-    <input class="btn_guardar" type="submit" value="Crear usuario">
+    <input class="btn_guardar" type="submit" value="Crear proteína">
 
 
 

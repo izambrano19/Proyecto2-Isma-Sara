@@ -18,7 +18,6 @@ if(!empty($_POST)){
         $smiles = $_POST["smiles"];
         $inChl = $_POST["inChl"];
         $estado = $_POST["estado"];
-
         $DNICreador = $_POST['DNICreador'];
 
 
@@ -93,7 +92,7 @@ if(!empty($_POST)){
 
     <input type="hidden" id="DNICreador" name="DNICreador" value="<?php echo $_SESSION['DNI']; ?>"/>
 
-    <input class="btn_guardar" type="submit" value="Crear usuario">
+    <input class="btn_guardar" type="submit" value="Crear fármaco">
 
 
 
