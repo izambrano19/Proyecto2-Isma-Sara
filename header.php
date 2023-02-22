@@ -14,9 +14,8 @@ session_start();
     
     <!-- TIPO DE LETRA ROBOTO-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 
     <link rel="stylesheet" href="css/estilo.css">
@@ -53,35 +52,31 @@ session_start();
                         <li><a href="statistics.php">STATISTICS</a></li>
                         <li><a href="proteinas.php">PROTEINAS</a></li>
                         <li><a href="farmacos.php">FÁRMACOS</a></li>
+                        <li><a href="administracion/login.php">LOGIN</a></li>
 
-                        <script>
+                        <!-- <script>
 
                                 <?php
 
-                            if(!empty($_SESSION['activo'])){
+                            // if(!empty($_SESSION['activo'])){
 
-                                if(($_SESSION['tipo']) == "admin" ){
-                                    echo '$("ul").append($("<li><a href=\'registrar_usuario.php\'>REGISTRAR USUARIO</a></li>"));';
+                            //     if(($_SESSION['tipo']) == "admin" ){
+                            //         echo '$("ul").append($("<li><a href=\'registrar_usuario.php\'>REGISTRAR USUARIO</a></li>"));';
 
-                                }
+                            //     }
 
-                                echo '$("ul").append($("<li><a href=\'salir.php\'><img class=\'icono-cerrarsesion\' src=\'img/iconos/icono-cerrarsesion.png\'></a></li>"));';
-
-
-                            }else{
-                                echo '$("ul").append($("<li><a href=\'login.php\'>LOG IN</a></li>"));';
-                            }
-                            
-
-                   
+                            //     echo '$("ul").append($("<li><a href=\'salir.php\'><img class=\'icono-cerrarsesion\' src=\'img/iconos/icono-cerrarsesion.png\'></a></li>"));';
 
 
+                            // }else{
+                            //     echo '$("ul").append($("<li><a href=\'login.php\'>LOG IN</a></li>"));';
+                            // }
                             
                             ?>
                                 
 
 
-                         </script>
+                         </script> -->
 
 
                     </ul>

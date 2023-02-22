@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: #d6e8f0;
+}
+
+img {
+    max-width:100%;
+}
+
+td, th {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 10px;
+}
+
+#column1 {
+    width: 20%;
+    font-weight: bold;
+}
+
+.container-title {
+    text-align: center;
+    padding: 30px;
+    background-color: #d6e8f0;
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 30px;
+    margin-top: 80px;
+}
+
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ebeaea;
+    padding: 10px;
+    box-shadow: 0 5px 5px #c7c2c2;
+}
+
+.container-img {
+    flex: 1;
+}
+
+.container-info-med {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+/*-------------------------INPUTS-------------------------------*/
+input, textarea{
+  width: 80%;
+  outline: none;
+  border: 1px solid #76c0be;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+textarea{
+    resize: none;
+    min-height: 100px; 
+}
+
+
+/*-----------------------hover:img_edit-------------------------*/
+.image {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.hover_img {
+    display: flex;
+    transition: .5s ease;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container-img:hover .image{
+    opacity: 0.3;
+}
+
+.container-img:hover .hover_img {
+    opacity: 1; 
+    cursor: pointer;
+}
+
+.edit-img {
+    background-color: #76c0be;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+/*-----------------------------save-------------------------------*/
+.input_field{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+}
+
+.btn{
+    width: 100%;
+    max-width: 80px;
+    float: right;
+    margin: auto;
+    margin-bottom: 100px;
+    font-size: 14px;
+    border: 0;
+    background: #d6e8f0;
+    color: rgb(63, 62, 62);
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px #bcbebd;
+}
+
+.btn:hover{
+    background: #b3e1f3;
+}

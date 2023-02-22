@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    background: teal;
+    width: 410px;
+    text-align: -webkit-center;
+    margin: 20px;
+}
+.form_container {
+    text-align: -webkit-center;
+}
+
+table {
+    color: white;
+    background: #439A97;
+}
+.inputs{
+    background: #ffffffd9;
+    width: 573px;
+}
