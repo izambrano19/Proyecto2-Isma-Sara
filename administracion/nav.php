@@ -3,30 +3,29 @@
 <div class="menu">
         
         <ul>
-            <li><a href='index.php'>HOMEPAGE</a></li>
+            <li><a href='index.php'><i class="fa-solid fa-house-chimney"></i> HOMEPAGE</a></li>
            
-            <li><span>USUARIOS</span>
+            <li><a href="#"><i class="fa-solid fa-users"></i> USUARIOS</a>
                 <ul>
-                    <li><a href="crear_usuario.php">CREAR USUARIO</a>
-                    <li><a href="listado_usuarios.php">LISTADO DE USUARIOS</a>
+                    <li><a href="crear_usuario.php"><i class="fa-solid fa-user-plus"></i> CREAR USUARIO</a>
+                    <li><a href="listado_usuarios.php"><i class="fa-solid fa-users"></i> LISTADO DE USUARIOS</a>
                 </ul>   
             </li>
 
-            <li><span>PROTEINAS</span>
+            <li><a href="#"><i class="fa-solid fa-dna"></i> PROTEINAS</a>
                 <ul>
-                    <li><a href="crear_proteina.php">CREAR PROTEINA</a>
-                    <li><a href="listado_proteinas.php">LISTADO DE PROTEINAS</a>
+                    <li><a href="crear_proteina.php"><i class="fa-solid fa-dna"></i> CREAR PROTEINA</a>
+                    <li><a href="listado_proteinas.php"><i class="fa-solid fa-dna"></i> LISTADO DE PROTEINAS</a>
                 </ul>   
             </li>
             
-            <li><span>FÁRMACOS</span>
+            <li><a href="#"><i class="fa-solid fa-capsules"></i> FÁRMACOS</a>
                 <ul>
-                    <li><a href="crear_farmaco.php">CREAR FÁRMACO</a>
-                    <li><a href="listado_farmacos.php">LISTADO DE FÁRMACOS</a>
+                    <li><a href="crear_farmaco.php"><i class="fa-solid fa-prescription-bottle-medical"></i> CREAR FÁRMACO</a>
+                    <li><a href="listado_farmacos.php"><i class="fa-solid fa-capsules"></i> LISTADO DE FÁRMACOS</a>
                 </ul>   
             </li>
         
         </ul>
-        <li><a class="salir" href="salir.php">SALIR</a></li>
 
     </div>

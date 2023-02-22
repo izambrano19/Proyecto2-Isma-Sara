@@ -6,8 +6,12 @@ if(empty($_SESSION['activo'])){
 ?>
 
     <header>
-        <h1>ADMINISTRACIÓN</h1>
-        <?php include_once("nav.php") ;?>
 
+    <div class="header">
+        <h1>ADMINISTRACIÓN</h1>
+        <li><a class="salir" href="salir.php">SALIR</a></li>
+
+        </div>
+        <?php include_once("nav.php") ;?>
 
     </header>

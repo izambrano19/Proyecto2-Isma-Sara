@@ -12,29 +12,32 @@ include_once('connexiosaraismabbdd.php');
 </head>
 <body>
     <?php include_once("header.php")?>
-<br>
-<br>
-<br>
 
 
 
-        <h2 style="text-align: center">LISTADO DE USUARIOS</h2>
-<br>
+
 
 <!-- BARRA DE NAVEGACION -->
 
-<form action="buscar_usuarios.php" class="form_container"  method="get" name="formu">
+<div class="container">
+  <div class="container_arriba">
+    <div style="display: flex">
+<h1>LISTADO DE USUARIOS</h1>
+<a href="crear_usuario.php" class="btn_nuevo"><i class="fa-solid fa-user-plus"></i> CREAR USUARIO</a>
+</div>
+<form action="buscar_usuarios.php" class="form_busqueda"  method="get" name="formu">
 
-  <div class="field" id="searchform">
-    <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Buscar" />
-    <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png"></button>
+    <div style="display: flex">
+
+    <input id="busqueda" name="busqueda" type="text" placeholder="Buscar" class="input_busqueda"/>
+    <input type="submit" value="buscar" class="btn_busqueda"/>
   </div>
+
 </form>
 
-<div class="containerBotonItems">
-  <input class="botonItems" type="button" value="NEW ITEM">
-  <input class="botonItems" type="button" value="MY ITEM">
 </div>
+
+
 
 
 <?php
@@ -64,20 +67,37 @@ include_once('connexiosaraismabbdd.php');
 
   if($resultado > 0){
 
+?>
+<table>
+  <tr>
+    <th>DNI</th>
+    <th>Nombre de Usuario</th>
+    <th>Tipo</th>
+    <th>Acciones</th>
+
+  </tr>
+
+<?php
+
     while ($row = mysqli_fetch_assoc($sql)) {
       $dni = $row["DNI"];
       $tipo = $row["Tipo"];
       $nombreUsuario = $row["NombreUsuario"];
 
-
-              echo "DNI: .$dni.";
-              echo "Tipo: .$tipo.";
-              echo "Nombre Usuario: .$nombreUsuario.";
-      
 ?>
-<a href="editar_usuario.php?DNI=<?php echo $dni; ?>"> EDITAR </a>
-<a href="eliminar_usuario.php?DNI=<?php echo $dni; ?>"> ELIMINAR </a>
-<br>
+
+<tr>
+  <td><?php echo $dni; ?></td>
+  <td><?php echo $tipo; ?></td>
+  <td><?php echo $nombreUsuario; ?></td>
+  <td>
+    <a class="link_editar" href="editar_usuario.php?DNI=<?php echo $dni;?>">EDITAR</a>
+    |
+    <a class="link_eliminar" href="eliminar_usuario.php?DNI=<?php echo $dni;?>">ELIMINAR</a>  
+  </td>
+</tr>
+
+
 <?php
               
       }
@@ -87,8 +107,8 @@ include_once('connexiosaraismabbdd.php');
   echo "<h3 style='text-align:-webkit-center'>No encontrado</h3>";
 }
     ?>
+    </table>
     </div>
-
 
 
 
