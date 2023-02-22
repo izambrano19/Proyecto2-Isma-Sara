@@ -83,7 +83,6 @@ include_once('connexiosaraismabbdd.php');
       $dni = $row["DNI"];
       $tipo = $row["Tipo"];
       $nombreUsuario = $row["NombreUsuario"];
-
 ?>
 
 <tr>
