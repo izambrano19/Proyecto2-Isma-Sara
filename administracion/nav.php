@@ -15,14 +15,14 @@
             <li><span>PROTEINAS</span>
                 <ul>
                     <li><a href="crear_proteina.php">CREAR PROTEINA</a>
-                    <li><a href="listado_usuarios.php">LISTADO DE PROTEINAS</a>
+                    <li><a href="listado_proteinas.php">LISTADO DE PROTEINAS</a>
                 </ul>   
             </li>
             
             <li><span>FÁRMACOS</span>
                 <ul>
                     <li><a href="crear_farmaco.php">CREAR FÁRMACO</a>
-                    <li><a href="listado_usuarios.php">LISTADO DE FÁRMACOS</a>
+                    <li><a href="listado_farmacos.php">LISTADO DE FÁRMACOS</a>
                 </ul>   
             </li>
         

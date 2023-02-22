@@ -7,7 +7,7 @@ if(!empty($_POST)){
     $sql_delete = mysqli_query($conexion, "DELETE FROM tproteinas WHERE IDProteina = $id_proteina");
 
 if($sql_delete){
-    header("location: proteinas.php");
+    header("location: listado_proteinas.php");
 }else{
     echo "ERROR AL ELIMINAR";
 }
@@ -16,10 +16,9 @@ if($sql_delete){
 
 }
 
-require("header.php");
 
  if(empty($_REQUEST['id_proteina'])){
-    header("location: proteinas.php");
+    header("location: listado_proteinas.php");
    }
    else{
 
@@ -38,7 +37,7 @@ require("header.php");
             $nombre = $row["Nombre"];
         }
     }else{
-        header("location: proteinas.php");
+        header("location: listado_proteinas.php");
     }
 
    }
@@ -47,6 +46,21 @@ require("header.php");
 
 <?php
 ?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <?php include_once("scripts.php")?>
+</head>
+<body>
+    <?php include_once("header.php")?>
+<br>
+<br>
+<br>
+
+
+
 
     <div style="margin-top: 100px"></div>
 <br>
@@ -58,7 +72,7 @@ require("header.php");
     <p>Nombre: <?php echo $nombre ?></p>
     
     <form method="post" action="">
-        <a href="proteinas.php" class="btn_cancel">Cancelar</a>
+        <a href="listado_proteinas.php" class="btn_cancel">Cancelar</a>
         <input type="submit" value="Aceptar" class="btn_ok">
         <input type="hidden" name="id_proteina" value="<?php echo $id_proteina; ?>">
 
@@ -68,5 +82,5 @@ require("header.php");
 
 
 
-
-<?php require("footer.php")?>
+</body>
+</html>
