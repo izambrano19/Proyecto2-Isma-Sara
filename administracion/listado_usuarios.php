@@ -88,8 +88,8 @@ include_once('connexiosaraismabbdd.php');
 
 <tr>
   <td><?php echo $dni; ?></td>
-  <td><?php echo $tipo; ?></td>
   <td><?php echo $nombreUsuario; ?></td>
+  <td><?php echo $tipo; ?></td>
   <td>
     <a class="link_editar" href="editar_usuario.php?DNI=<?php echo $dni;?>">EDITAR</a>
     |
