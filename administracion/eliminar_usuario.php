@@ -4,7 +4,7 @@
 if(!empty($_POST)){
     $dni_usuario = $_POST["DNI"];
     
-    $sql_delete = mysqli_query($conexion, "DELETE FROM tusuario WHERE DNI = $dni_usuario");
+    $sql_delete = mysqli_query($conexion, "DELETE FROM tusuario WHERE DNI = '$dni_usuario'");
 
 if($sql_delete){
     header("location: listado_usuarios.php");
