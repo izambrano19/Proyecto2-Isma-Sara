@@ -34,6 +34,7 @@ if(!empty($_POST)){
             }
 
             if($sql_update){
+                echo '<script> alert("usuario_creado")</script>';
                 $alert="<p class='msg_correcto'>El usuario ha sido actualizado correctamente</p>";
             }else{
                 $alert="<p class='msg_error'>Error al actualizazr el usuario</p>";
