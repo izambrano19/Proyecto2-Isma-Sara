@@ -11,6 +11,7 @@ if(!empty($_POST)){
 
         $nombre = $_POST["nombre"];
         $dni = $_POST["dni"];
+        $dni_user = $_POST["dni_usuario"];
         $pass = md5($_POST["password"]);
         $tipo = $_POST["tipo"];
 
@@ -25,11 +26,11 @@ if(!empty($_POST)){
             if(empty($_POST['password'])){
                 $sql_update = mysqli_query($conexion, "UPDATE tusuario
                 SET NombreUsuario = '$nombre', Tipo = '$tipo', DNI = '$dni'
-                WHERE DNI = '$dni'");
+                WHERE DNI = '$dni_user'");
             }else{
                 $sql_update = mysqli_query($conexion, "UPDATE tusuario
                 SET NombreUsuario = '$nombre', Tipo = '$tipo', DNI = '$dni', Password = '$pass'
-                WHERE DNI = '$dni'");
+                WHERE DNI = '$dni_user'");
             }
 
             if($sql_update){
@@ -45,8 +46,6 @@ if(!empty($_POST)){
 if(empty($_GET['DNI'])){
     header("location: listado_usuarios.php");
 }
-
-
 
 $dni_usuario = $_GET['DNI'];
 
