@@ -1,13 +1,13 @@
 <?php 
 
+include_once('connexiosaraismabbdd.php');
 
 if(!empty($_POST)){
     $alert="";
-    if(empty($_POST["nombre"]) || empty($_POST["dni"]) || empty($_POST["password"]) || empty($_POST["tipo"])){
+    if(empty($_POST["nombre"]) || empty($_POST["dni"]) || empty($_POST["tipo"])){
 
         $alert="<p class='msg_error'>Todos los campos son obligatorios</p>";
     }else{
-        include_once('connexiosaraismabbdd.php');
 
         $nombre = $_POST["nombre"];
         $dni = $_POST["dni"];
@@ -35,10 +35,11 @@ if(!empty($_POST)){
 }
 
 /* Mostrar datos */
-
 if(empty($_GET['DNI'])){
     header("location: listado_usuarios.php");
 }
+
+
 
 $dni_usuario = $_GET['DNI'];
 
@@ -49,13 +50,19 @@ $resultado_sql = mysqli_num_rows($sql);
 if($resultado_sql == 0){
     header("location: listado_usuarios.php");
 }else{
-
+    $option = '';
     while($row = mysqli_fetch_assoc($sql)){
 
         $dni_usuario = $row['DNI'];
         $nombre = $row['NombreUsuario'];
         $tipo = $row['Tipo'];
         $password = $row['Password'];
+
+        if($tipo == "admin"){
+            $option = "<option value='admin' select>admin</option>";
+        }else if($tipo == "editor"){
+            $option = "<option value='editor' select>editor</option>";
+        }
 
     }
 
@@ -85,11 +92,11 @@ if($resultado_sql == 0){
 
 <form action="" method="post">
     <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?php echo $nombre;?> ">
 
 
     <label for="dni">DNI</label>
-    <input type="text" name="dni" id="dni" placeholder="DNI" minlength="9" maxlength="9">
+    <input type="text" name="dni" id="dni" placeholder="DNI" minlength="9" maxlength="9" value="<?php echo $dni_usuario;?>">
 
 
     <label for="password">Contraseña</label>
@@ -98,8 +105,8 @@ if($resultado_sql == 0){
 
     <label for="tipo">Tipo Usuario</label>
 
-    <select name="tipo" id="tipo">
-
+    <select name="tipo" id="tipo" class="noPrimerItem">
+        <?php echo "$option";?>
         <option value="admin">admin</option>
         <option value="editor">editor</option>
 

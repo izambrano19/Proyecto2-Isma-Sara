@@ -1,5 +1,7 @@
 <?php 
 
+include_once('connexiosaraismabbdd.php');
+
 
 if(!empty($_POST)){
     $alert="";
@@ -7,7 +9,6 @@ if(!empty($_POST)){
 
         $alert="<p class='msg_error'>Todos los campos son obligatorios</p>";
     }else{
-        include_once('connexiosaraismabbdd.php');
 
         $nombre = $_POST["nombre"];
         $dni = $_POST["dni"];

@@ -10,7 +10,7 @@
 /********************* PAGINA HEADER ********************/
 
 .header{
-    background-color: rgb(107 105 214);
+    background-color: rgb(24 78 135);
     display: flex;
     justify-content: space-between;
 }
@@ -189,6 +189,11 @@ table td{
     border-radius: 4px;
 }
 
+/********************* PAGINA EDITAR USUARIOS ********************/
+
+.noPrimerItem option:first-child{
+    display: none;
+}
 
 
 /****************** PAGINA PROTEINAS ******************/
