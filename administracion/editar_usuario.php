@@ -14,18 +14,27 @@ if(!empty($_POST)){
         $pass = md5($_POST["password"]);
         $tipo = $_POST["tipo"];
 
-
-        $query = mysqli_query($conexion,"SELECT * FROM tusuario WHERE DNI = '$dni'");
+        $query = mysqli_query($conexion,"SELECT * FROM tusuario WHERE NombreUsuario = '$nombre' AND DNI != '$dni'
+        OR DNI != dni
+        
+        ");
         $resultado = mysqli_fetch_assoc($query);
 
         if($resultado > 0){
             $alert="<p class='msg_error'>El usuario ya existe</p>";
         }else{
 
-            $query_insertar = mysqli_query($conexion, "INSERT INTO tusuario (DNI, Tipo, NombreUsuario, Password)
-            VALUES('$dni','$tipo','$nombre','$pass')");
+            if(empty($_POST['password'])){
+                $sql_update = mysqli_query($conexion, "UPDATE tusuario
+                SET NombreUsuario = '$nombre', Tipo = '$tipo', DNI = '$dni'
+                WHERE DNI = '$dni'");
+            }else{
+                $sql_update = mysqli_query($conexion, "UPDATE tusuario
+                SET NombreUsuario = '$nombre', Tipo = '$tipo', DNI = '$dni', Password = '$pass'
+                WHERE DNI = '$dni'");
+            }
 
-            if($query_insertar){
+            if($sql_update){
                 $alert="<p class='msg_correcto'>El usuario ha sido actualizado correctamente</p>";
             }else{
                 $alert="<p class='msg_error'>Error al actualizazr el usuario</p>";
@@ -56,7 +65,6 @@ if($resultado_sql == 0){
         $dni_usuario = $row['DNI'];
         $nombre = $row['NombreUsuario'];
         $tipo = $row['Tipo'];
-        $password = $row['Password'];
 
         if($tipo == "admin"){
             $option = "<option value='admin' select>admin</option>";
@@ -91,6 +99,8 @@ if($resultado_sql == 0){
 <div class="alert"> <?php echo isset($alert) ? $alert : ''; ?> </div>
 
 <form action="" method="post">
+    <input type="hidden" name="dni_usuario" value="<?php echo "$dni_usuario";?>">
+
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?php echo $nombre;?> ">
 
