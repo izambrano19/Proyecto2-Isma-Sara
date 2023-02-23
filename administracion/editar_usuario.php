@@ -15,8 +15,6 @@ if(!empty($_POST)){
         $tipo = $_POST["tipo"];
 
         $query = mysqli_query($conexion,"SELECT * FROM tusuario WHERE NombreUsuario = '$nombre' AND DNI != '$dni'
-        OR DNI != dni
-        
         ");
         $resultado = mysqli_fetch_assoc($query);
 
