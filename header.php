@@ -13,6 +13,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- TIPO DE LETRA ROBOTO-->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -21,10 +22,36 @@ session_start();
     <link rel="stylesheet" href="css/estilo.css">
     <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-    <title>Nais</title>
+    <title>Z.MedProteins</title>
     <link rel="shorcut icon" type="image/png" href="img/favicon.png">
 
+    <link rel="stylesheet" href="css/pdcc.min.css"/>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="js/pdcc.min.js"></script>
+    <script type="text/javascript">
+    PDCookieConsent.config({
+    "defaultLang" : "es",
+    "brand": {
+    "dev" : false,
+    "name": "Z.MedProteins",
+    "url" : "https://localhost",
+    "websiteOwner" : "Z.MedProteins"
+    },
+    "cookiePolicyLink": "http://localhost/cookies.php",
+    "hideModalIn": ["http://localhost/cookies.php"],
+    "styles": {
+    "primaryButton": {
+    "bgColor" : "#99e0ff",
+    "txtColor": "#000000"
+    },
+    "secondaryButton": {
+    "bgColor" : "#EEEEEE",
+    "txtColor": "#333333"
+    }
+    }
+    });
+    </script>
+
 </head>
 
 <body>
