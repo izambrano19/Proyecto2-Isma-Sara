@@ -46,7 +46,13 @@ if(!empty($_POST)){
     <?php include_once("scripts.php")?>
 </head>
 <body>
-    <?php include_once("header.php")?>
+    <?php 
+    include_once("header.php");
+    if($_SESSION['tipo'] != 'admin'){
+        header("location: index.php");
+    }
+    
+    ?>
 <br>
 <br>
 <br>

@@ -5,12 +5,19 @@
         <ul>
             <li><a href='index.php'><i class="fa-solid fa-house-chimney"></i> HOMEPAGE</a></li>
            
-            <li><a href="#"><i class="fa-solid fa-users"></i> USUARIOS</a>
-                <ul>
-                    <li><a href="crear_usuario.php"><i class="fa-solid fa-user-plus"></i> CREAR USUARIO</a>
-                    <li><a href="listado_usuarios.php"><i class="fa-solid fa-users"></i> LISTADO DE USUARIOS</a>
-                </ul>   
-            </li>
+
+
+            <?php
+                if($_SESSION['tipo'] == 'admin' ){
+                    
+                    echo '<li><a href="#"><i class="fa-solid fa-users"></i> USUARIOS</a>
+                    <ul>
+                        <li><a href="crear_usuario.php"><i class="fa-solid fa-user-plus"></i> CREAR USUARIO</a>
+                        <li><a href="listado_usuarios.php"><i class="fa-solid fa-users"></i> LISTADO DE USUARIOS</a>
+                    </ul>   
+                    </li>';
+            }
+            ?>
 
             <li><a href="#"><i class="fa-solid fa-dna"></i> PROTEINAS</a>
                 <ul>

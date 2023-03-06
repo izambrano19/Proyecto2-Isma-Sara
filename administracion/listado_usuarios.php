@@ -11,7 +11,13 @@ include_once('connexiosaraismabbdd.php');
     <?php include_once("scripts.php")?>
 </head>
 <body>
-    <?php include_once("header.php")?>
+    <?php
+    include_once("header.php");
+    if($_SESSION['tipo'] != 'admin'){
+      header("location: index.php");
+    }
+    
+    ?>
 
 
 
@@ -67,52 +73,54 @@ include_once('connexiosaraismabbdd.php');
 
   if($resultado > 0){
 
-?>
-<table>
-  <tr>
-    <th>DNI</th>
-    <th>Nombre de Usuario</th>
-    <th>Tipo</th>
-    <th>Acciones</th>
-
-  </tr>
-
-<?php
-
+    echo "
+    <table>
+      <tr>
+        <th>DNI</th>
+        <th>Nombre de Usuario</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+      </tr>
+    ";
+    
     while ($row = mysqli_fetch_assoc($sql)) {
       $dni = $row["DNI"];
       $tipo = $row["Tipo"];
       $nombreUsuario = $row["NombreUsuario"];
-?>
-
-<tr>
-  <td><?php echo $dni; ?></td>
-  <td><?php echo $nombreUsuario; ?></td>
-  <td><?php echo $tipo; ?></td>
-  <td>
-    <a class="link_editar" href="editar_usuario.php?DNI=<?php echo $dni;?>">EDITAR</a>
-    |
-    <a class="link_eliminar" href="eliminar_usuario.php?DNI=<?php echo $dni;?>">ELIMINAR</a>  
-  </td>
-</tr>
 
 
-<?php
-              
+      
+      echo"
+      <tr>
+        <td>$dni</td>
+        <td>$nombreUsuario</td>
+        <td>$tipo</td>
+        <td>
+          <a class='link_editar' href='editar_usuario.php?DNI=$dni'>EDITAR</a>
+          ";
+
+          if($dni != $_SESSION['DNI']){
+            echo"
+            |
+            <a class='link_eliminar' href='eliminar_usuario.php?DNI=$dni'>ELIMINAR</a>  
+            </td>
+          </tr>
+          ";
+        }
+
+
       }
     }
     else 
 {
   echo "<h3 style='text-align:-webkit-center'>No encontrado</h3>";
 }
-    ?>
-    </table>
-    </div>
-
-
+?>
+  </table>
+</div>
 
     
-    <div class="pagination">
+<div class="pagination">
   <?php
   if ($pagina > 1) {
     echo "<li><a href='?pagina=".($pagina-1)."'>Anterior</a></li>";

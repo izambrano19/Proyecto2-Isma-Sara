@@ -7,3 +7,5 @@ session_start();
 session_destroy();
 # Finalmente lo redireccionamos al formulario
 header("Location: login.php");
+
+?>

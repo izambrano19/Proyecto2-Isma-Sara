@@ -48,7 +48,9 @@
   $resultado= mysqli_num_rows($sql);
 
   if($resultado > 0){
-    ?>
+
+    echo "
+    
     <table>
       <tr>
         <th>IDFarmaco</th>
@@ -62,9 +64,8 @@
         <th>Estado</th>
         <th>Acciones</th>
       </tr>
-    
-    <?php
 
+    ";
 
     while ($row = mysqli_fetch_assoc($sql)) {
       
@@ -78,28 +79,27 @@
       $inChl = $row["InChl"];
       $estado = $row["Estado"];
   
-      ?>
 
+      echo "
+    
       <tr>
-        <td><?php echo $id_farmaco; ?></td>
-        <td><?php echo $nombre; ?></td>
-        <td><?php echo $codigoApp; ?></td>
-        <td><?php echo $fecha; ?></td>
-        <td><?php echo $nombreFichero; ?></td>
-        <td><?php echo $tipoFichero; ?></td>
-        <td><?php echo $smiles; ?></td>
-        <td><?php echo $inChl; ?></td>
-        <td><?php echo $estado; ?></td>
+        <td>$id_farmaco</td>
+        <td>$nombre</td>
+        <td>$codigoApp</td>
+        <td>$fecha</td>
+        <td>$nombreFichero</td>
+        <td>$tipoFichero</td>
+        <td>$smiles</td>
+        <td>$inChl</td>
+        <td>$estado</td>
         <td>
-          <a class="link_editar" href="editar_farmaco.php?id_farmaco=<?php echo $id_farmaco;?>">EDITAR</a>
+          <a class='link_editar' href='editar_farmaco.php?id_farmaco=$id_farmaco'>EDITAR</a>
           |
-          <a class="link_eliminar" href="eliminar_farmaco.php?id_farmaco=<?php echo $id_farmaco;?>">ELIMINAR</a>  
+          <a class='link_eliminar' href='eliminar_farmaco.php?id_farmaco=$id_farmaco'>ELIMINAR</a>  
         </td>
       </tr>
       
-      
-      <?php
-
+      ";
 
       }
     }

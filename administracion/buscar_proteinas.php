@@ -68,7 +68,7 @@
 
   if($resultado > 0){
 
-    ?>
+    echo "
     <table>
       <tr>
         <th>IDProteina</th>
@@ -82,8 +82,7 @@
         <th>Resolucion</th>
         <th>Acciones</th>
       </tr>
-    
-    <?php
+    ";
 
     while ($row = mysqli_fetch_assoc($sql)) {
 
@@ -97,27 +96,25 @@
       $metodo = $row["Metodo"];
       $resolucion = $row["Resolucion"];
   
-      ?>
-
+      echo "
+      
       <tr>
-        <td><?php echo $id_proteina; ?></td>
-        <td><?php echo $nombre; ?></td>
-        <td><?php echo $codigoApp; ?></td>
-        <td><?php echo $fecha; ?></td>
-        <td><?php echo $nombreFichero; ?></td>
-        <td><?php echo $tipoFichero; ?></td>
-        <td><?php echo $especie; ?></td>
-        <td><?php echo $metodo; ?></td>
-        <td><?php echo $resolucion; ?></td>
+        <td>$id_proteina</td>
+        <td>$nombre</td>
+        <td>$codigoApp</td>
+        <td>$fecha</td>
+        <td>$nombreFichero</td>
+        <td>$tipoFichero</td>
+        <td>$especie</td>
+        <td>$metodo</td>
+        <td>$resolucion</td>
         <td>
-          <a class="link_editar" href="editar_proteina.php?id_proteina=<?php echo $id_proteina;?>">EDITAR</a>
+          <a class='link_editar' href='editar_proteina.php?id_proteina=$id_proteina'>EDITAR</a>
           |
-          <a class="link_eliminar" href="eliminar_proteina.php?id_proteina=<?php echo $id_proteina;?>">ELIMINAR</a>  
+          <a class='link_eliminar' href='eliminar_proteina.php?id_proteina=$id_proteina'>ELIMINAR</a>  
         </td>
       </tr>
-      
-      
-      <?php
+      ";
 
       }
     }

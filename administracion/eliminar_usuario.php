@@ -16,6 +16,7 @@ if($sql_delete){
 
 
  if(empty($_REQUEST['DNI'])){
+    
     header("location: listado_usuarios.php");
    }
    else{
@@ -50,12 +51,20 @@ if($sql_delete){
     <?php include_once("scripts.php")?>
 </head>
 <body>
-    <?php include_once("header.php")?>
-<br>
-<br>
-<br>
+    <?php 
+    include_once("header.php");
+    
+    if($_SESSION['tipo'] != 'admin'){
+        header("location: index.php");
 
+    }else if($_REQUEST['DNI'] == $_SESSION['DNI']){
+        header("location: listado_usuarios.php");
+    }
 
+    ?>
+<br>
+<br>
+<br>
 
 
     <div style="margin-top: 100px"></div>
