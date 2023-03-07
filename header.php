@@ -11,46 +11,73 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Z.MedProteins</title>
     
+    <link rel="stylesheet" href="css/pdcc.min.css"/>
+
+    <script src="js/pdcc.min.js"></script>
+    
+    <script type="text/javascript">
+    PDCookieConsent.config({
+        "defaultLang" : "es",
+        "brand": {
+            "dev" : false,
+            "name": "Z.MedProteins",
+            "url" : "https://projectedawilg3.cat/",
+            "websiteOwner" : "Z.MedProteins"
+        },
+        "cookiePolicyLink": "http://localhost/cookies.php",
+        "hideModalIn": ["http://localhost/cookies.php"],
+        "styles": {
+            "primaryButton": {
+                "bgColor" : "#99e0ff",
+                "txtColor": "#000000"
+            },
+            "secondaryButton": {
+                "bgColor" : "#EEEEEE",
+                "txtColor": "#333333"
+            }
+        }
+    });
+    
+    PDCookieConsent.blockList([
+        {
+            "contain" : ": Google",
+             "name" : "Google",
+             "actived" : true,
+             "editable" : false,
+             "visible" : false
+        }
+        
+    ]);
+
+    
+    </script>
+    
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F8Z6B6PKV"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9F8Z6B6PKV');
+    </script>
+
     <!-- TIPO DE LETRA ROBOTO-->
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-
+    <!-- PAGINA DE ESTILOS -->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-    <title>Z.MedProteins</title>
     <link rel="shorcut icon" type="image/png" href="img/favicon.png">
 
-    <link rel="stylesheet" href="css/pdcc.min.css"/>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <script src="js/pdcc.min.js"></script>
-    <script type="text/javascript">
-    PDCookieConsent.config({
-    "defaultLang" : "es",
-    "brand": {
-    "dev" : false,
-    "name": "Z.MedProteins",
-    "url" : "https://localhost",
-    "websiteOwner" : "Z.MedProteins"
-    },
-    "cookiePolicyLink": "http://localhost/cookies.php",
-    "hideModalIn": ["http://localhost/cookies.php"],
-    "styles": {
-    "primaryButton": {
-    "bgColor" : "#99e0ff",
-    "txtColor": "#000000"
-    },
-    "secondaryButton": {
-    "bgColor" : "#EEEEEE",
-    "txtColor": "#333333"
-    }
-    }
-    });
-    </script>
+
 
 </head>
 
@@ -80,32 +107,6 @@ session_start();
                         <li><a href="proteinas.php">PROTEINAS</a></li>
                         <li><a href="farmacos.php">FÁRMACOS</a></li>
                         <li><a href="administracion/login.php">LOGIN</a></li>
-
-                        <!-- <script>
-
-                                <?php
-
-                            // if(!empty($_SESSION['activo'])){
-
-                            //     if(($_SESSION['tipo']) == "admin" ){
-                            //         echo '$("ul").append($("<li><a href=\'registrar_usuario.php\'>REGISTRAR USUARIO</a></li>"));';
-
-                            //     }
-
-                            //     echo '$("ul").append($("<li><a href=\'salir.php\'><img class=\'icono-cerrarsesion\' src=\'img/iconos/icono-cerrarsesion.png\'></a></li>"));';
-
-
-                            // }else{
-                            //     echo '$("ul").append($("<li><a href=\'login.php\'>LOG IN</a></li>"));';
-                            // }
-                            
-                            ?>
-                                
-
-
-                         </script> -->
-
-
                     </ul>
 
                 </nav>

@@ -21,6 +21,7 @@
         <h2>NORMATIVA LEGAL</h2>
         <p>PROTECCIÓN DE DATOS</p>
         <p>POLÍTICA DE COOKIES</p>
+        <a href="#" class="pdcc-open-modal">Panel Cookies</a>
         <p>AVISO LEGAL</p>
     </div>
 </div>
