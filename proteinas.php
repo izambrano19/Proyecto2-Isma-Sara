@@ -20,7 +20,7 @@ include_once('connexiosaraismabbdd.php');
 
   <div class="field" id="searchform">
     <input class="inputs" id="busqueda" name="busqueda" type="text" placeholder="Coloca una proteina" />
-    <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png"></button>
+    <button type="submit" value="buscar"><img class="iconSearch" src="https://img.icons8.com/material-outlined/256/search.png" ></button>
   </div>
 </form>
 
@@ -97,9 +97,11 @@ include_once('connexiosaraismabbdd.php');
           <div class='item'> 
               <img src='img/proteinas/proteina-1.png'>
               <div class='container_info'>
-              <p>Identificador: <?php echo"$id_proteina" ?> </p>
+                <p>Identificador: <?php echo"$id_proteina" ?> </p>
                 <p>Nombre de fichero: <?php echo"$nombreFichero" ?> </p>
                 <p>Tipo de fichero: <?php echo"$tipoFichero" ?> </p>
+            </div>
+            <div class='container_info'>
                 <p>Especie: <?php echo"$especie" ?> </p>
                 <p>Método: <?php echo"$metodo" ?> </p>
                 <p>Resolución: <?php echo"$resolucion" ?> </p>

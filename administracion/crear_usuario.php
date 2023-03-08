@@ -43,6 +43,8 @@ if(!empty($_POST)){
 <html lang="es">
 <head>
     <?php include_once("scripts.php")?>
+    <script src="../js/validate_user.js"></script>
+    <link rel="stylesheet" href="../css/validate.css">
 </head>
 <body>
     <?php include_once("header.php")?>
@@ -59,7 +61,7 @@ if(!empty($_POST)){
 <hr>
 <div class="alert"> <?php echo isset($alert) ? $alert : ''; ?> </div>
 
-<form action="" method="post">
+<form action="" id="validate" method="post">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
 
@@ -82,8 +84,6 @@ if(!empty($_POST)){
     </select>
 
     <input class="btn_guardar" type="submit" value="Crear usuario">
-
-
 
 </form>
 
